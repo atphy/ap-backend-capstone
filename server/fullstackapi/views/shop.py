@@ -24,4 +24,4 @@ class Shops(ViewSet):
 class ShopSerializer(serializers.ModelSerializer):
     class Meta:
         model = Shop
-        fields = ('id', 'verified')
+        fields = ('id', 'profile', 'verified', 'address', 'city', 'state', 'zip_code', 'contact_phone', 'contact_email')

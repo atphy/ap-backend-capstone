@@ -1,5 +1,6 @@
 """Shop Model Module"""
 from django.db import models
+from django.contrib.auth.models import User
 
 class Shop(models.Model):
     """Shop Model"""
