@@ -22,11 +22,12 @@ class Records(ViewSet):
         return Response(serializer.data)
 
 
-"""Basic Serializer for single category"""
+"""Basic Serializer for all records"""
 class RecordSerializer(serializers.ModelSerializer):
     class Meta:
         model = Record
-        fields = ('id', 'label')
+        fields = ('id', 'discogs_id', 'shop_id', 'name', 'artist', 'label', 'catalogue_number', 'country', 'year', 'media_condition', 'sleeve_condition', 'price', 'image_url', 'notes', 'date_added')
+        depth = 1
 
 
 
