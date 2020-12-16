@@ -1,0 +1,38 @@
+[
+    {
+        "model": "fullstackapi.customer",
+        "pk": 1,
+        "fields": {
+            "profile": 4,
+            "phone": 9312603652,
+            "default_zip": 37216
+        }
+    },
+    {
+        "model": "fullstackapi.customer",
+        "pk": 2,
+        "fields": {
+            "profile": 7,
+            "phone": 9312603652,
+            "default_zip": 37216
+        }
+    },
+    {
+        "model": "fullstackapi.customer",
+        "pk": 3,
+        "fields": {
+            "profile": 9,
+            "phone": 9312603652,
+            "default_zip": 37216
+        }
+    },
+    {
+        "model": "fullstackapi.customer",
+        "pk": 4,
+        "fields": {
+            "profile": 10,
+            "phone": 9312603652,
+            "default_zip": 37216
+        }
+    }
+]

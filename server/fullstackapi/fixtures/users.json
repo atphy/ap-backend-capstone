@@ -1,0 +1,122 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
+            "username": "admin",
+            "first_name": "Ad",
+            "last_name": "Min",
+            "email": "admin@admin.com",
+            "date_joined": "2020-08-28T14:51:39.989Z"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
+            "username": "Grimey's New & Preloved Music",
+            "first_name": "Grimey's",
+            "last_name": "Records",
+            "email": "grimeys@grimeys.com",
+            "date_joined": "2020-08-28T14:51:39.989Z"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
+            "username": "Dead Wax Records",
+            "first_name": "Dead",
+            "last_name": "Wax",
+            "email": "deadwax@deadwax.com",
+            "date_joined": "2020-08-28T14:51:39.989Z"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 4,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
+            "username": "atphy",
+            "first_name": "Austin",
+            "last_name": "Phy",
+            "email": "atphy42@gmail.com",
+            "date_joined": "2020-08-28T14:51:39.989Z"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 5,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
+            "username": "The Groove",
+            "first_name": "Groove",
+            "last_name": "Records",
+            "email": "groove@groove.com",
+            "date_joined": "2020-08-28T14:51:39.989Z"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 6,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
+            "username": "Fond Object",
+            "first_name": "Fond",
+            "last_name": "Object",
+            "email": "fond@fond.com",
+            "date_joined": "2020-08-28T14:51:39.989Z"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 7,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
+            "username": "VirginiaViolet",
+            "first_name": "Virginia",
+            "last_name": "Violet",
+            "email": "virginia@virginia.com",
+            "date_joined": "2020-08-28T14:51:39.989Z"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 8,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
+            "username": "Terrapin Station",
+            "first_name": "Terrapin",
+            "last_name": "Station",
+            "email": "terrapin@terrapin.com",
+            "date_joined": "2020-08-28T14:51:39.989Z"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 9,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
+            "username": "IndianaIndigo",
+            "first_name": "Indiana",
+            "last_name": "Indigo",
+            "email": "indiana@indiana.com",
+            "date_joined": "2020-08-28T14:51:39.989Z"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 10,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
+            "username": "SydneySilver",
+            "first_name": "Sydney",
+            "last_name": "Silver",
+            "email": "sydney@sydney.com",
+            "date_joined": "2020-08-28T14:51:39.989Z"
+        }
+    }
+]

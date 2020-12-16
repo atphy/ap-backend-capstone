@@ -1,0 +1,82 @@
+[
+    {
+        "model": "fullstackapi.profile",
+        "pk": 1,
+        "fields": {
+            "profile_type": 1,
+            "user": 1
+        }
+    },
+    {
+        "model": "fullstackapi.profile",
+        "pk": 2,
+        "fields": {
+            "profile_type": 2,
+            "user": 2
+        }
+    },
+    {
+        "model": "fullstackapi.profile",
+        "pk": 3,
+        "fields": {
+            "profile_type": 2,
+            "user": 3
+        }
+    },
+    {
+        "model": "fullstackapi.profile",
+        "pk": 4,
+        "fields": {
+            "profile_type": 3,
+            "user": 4
+        }
+    },
+    {
+        "model": "fullstackapi.profile",
+        "pk": 5,
+        "fields": {
+            "profile_type": 2,
+            "user": 5
+        }
+    },
+    {
+        "model": "fullstackapi.profile",
+        "pk": 6,
+        "fields": {
+            "profile_type": 2,
+            "user": 6
+        }
+    },
+    {
+        "model": "fullstackapi.profile",
+        "pk": 7,
+        "fields": {
+            "profile_type": 3,
+            "user": 7
+        }
+    },
+    {
+        "model": "fullstackapi.profile",
+        "pk": 8,
+        "fields": {
+            "profile_type": 2,
+            "user": 8
+        }
+    },
+    {
+        "model": "fullstackapi.profile",
+        "pk": 9,
+        "fields": {
+            "profile_type": 3,
+            "user": 9
+        }
+    },
+    {
+        "model": "fullstackapi.profile",
+        "pk": 10,
+        "fields": {
+            "profile_type": 3,
+            "user": 10
+        }
+    }
+]

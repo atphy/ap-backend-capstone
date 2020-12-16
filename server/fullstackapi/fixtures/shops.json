@@ -1,0 +1,72 @@
+[
+    {
+        "model": "fullstackapi.shop",
+        "pk": 1,
+        "fields": {
+            "profile": 2,
+            "verified": true,
+            "address": "1060 E Trinity Ln",
+            "city": "Nashville",
+            "state": "TN",
+            "zip_code": 37216,
+            "contact_phone": 6152263811,
+            "contact_email": "atphy42@gmail.com"
+        }
+    },
+    {
+        "model": "fullstackapi.shop",
+        "pk": 2,
+        "fields": {
+            "profile": 3,
+            "verified": true,
+            "address": "1912 Cherokee St",
+            "city": "St. Louis",
+            "state": "MO",
+            "zip_code": 63118,
+            "contact_phone": 3148335565,
+            "contact_email": "atphy42@gmail.com"
+        }
+    },
+    {
+        "model": "fullstackapi.shop",
+        "pk": 3,
+        "fields": {
+            "profile": 5,
+            "verified": true,
+            "address": "1103 Calvin Ave",
+            "city": "Nashville",
+            "state": "TN",
+            "zip_code": 37206,
+            "contact_phone": 6152275760,
+            "contact_email": "atphy42@gmail.com"
+        }
+    },
+    {
+        "model": "fullstackapi.shop",
+        "pk": 4,
+        "fields": {
+            "profile": 6,
+            "verified": false,
+            "address": "1313 McGavock Pk",
+            "city": "Nashville",
+            "state": "TN",
+            "zip_code": 37216,
+            "contact_phone": 6154994498,
+            "contact_email": "atphy42@gmail.com"
+        }
+    },
+    {
+        "model": "fullstackapi.shop",
+        "pk": 5,
+        "fields": {
+            "profile": 8,
+            "verified": true,
+            "address": "920 S 12th St",
+            "city": "Murray",
+            "state": "KY",
+            "zip_code": 42071,
+            "contact_phone": 2707538926,
+            "contact_email": "atphy42@gmail.com"
+        }
+    }
+]
