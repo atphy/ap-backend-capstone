@@ -1,0 +1,402 @@
+[
+    {
+        "model": "fullstackapi.record",
+        "pk": 1,
+        "fields": {
+            "discogs_id": 696772,
+            "shop_id": 1,
+            "name": "Paranoid",
+            "artist": "Black Sabbath",
+            "label": "Vertigo",
+            "catalogue_number": "6360 011",
+            "country": "UK",
+            "year": 1970,
+            "media_condition": "VG+",
+            "sleeve_condition": "G",
+            "price": "40.99",
+            "image_url": "",
+            "notes": "Small crease in upper right corner, disc is clean and without scratches",
+            "date_added": "2020-04-20T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 2,
+        "fields": {
+            "discogs_id": 9145129,
+            "shop_id": 1,
+            "name": "Songs Of Leonard Cohen",
+            "artist": "Leonard Cohen",
+            "label": "Columbia",
+            "catalogue_number": "CS 9533",
+            "country": "US",
+            "year": 1967,
+            "media_condition": "G+",
+            "sleeve_condition": "F",
+            "price": "8.99",
+            "image_url": "",
+            "notes": "Sleeve has name written on back in permanent marker and various scuffs. Media plays fine.",
+            "date_added": "2020-05-17T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 3,
+        "fields": {
+            "discogs_id": 4010053,
+            "shop_id": 3,
+            "name": "Willy And The Poor Boys",
+            "artist": "Creedence Clearwater Revival",
+            "label": "Fantasy",
+            "catalogue_number": "8397",
+            "country": "US",
+            "year": "1969",
+            "media_condition": "G",
+            "sleeve_condition": "G",
+            "price": "6.99",
+            "image_url": "",
+            "notes": "Seams and spine are taped.",
+            "date_added": "2020-10-31T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 4,
+        "fields": {
+            "discogs_id": 12340634,
+            "shop_id": 2,
+            "name": "Dying in the South",
+            "artist": "Commander Keen",
+            "label": "Trash Dog Records",
+            "catalogue_number": "TRD-014",
+            "country": "US",
+            "year": "2017",
+            "media_condition": "NM",
+            "sleeve_condition": "NM",
+            "price": "12.49",
+            "image_url": "",
+            "notes": "Plastic wrap still present, media appears unplayed",
+            "date_added": "2018-03-09T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 5,
+        "fields": {
+            "discogs_id": 7786120,
+            "shop_id": 2,
+            "name": "Yes We Can",
+            "artist": "Lee Dorsey",
+            "label": "Music On Vinyl",
+            "catalogue_number": "MOVLP1978",
+            "country": "US",
+            "year": "2015",
+            "media_condition": "G+",
+            "sleeve_condition": "VG+",
+            "price": "60.00",
+            "image_url": "",
+            "notes": "Sleeve is in excellent condition, only expected wear. Media shows signs of use but plays cleanly.",
+            "date_added": "2020-12-15T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 6,
+        "fields": {
+            "discogs_id": "2195793",
+            "shop_id": 5,
+            "name": "Crooked Rain Crooked Rain",
+            "artist": "Pavement",
+            "label": "Matador",
+            "catalogue_number": "OLE 079-0",
+            "country": "US",
+            "year": "2010",
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": "19.99",
+            "image_url": "",
+            "notes": "lorem ipsum",
+            "date_added": "2020-11-20T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 7,
+        "fields": {
+            "discogs_id": "2195793",
+            "shop_id": 2,
+            "name": "Crooked Rain Crooked Rain",
+            "artist": "Pavement",
+            "label": "Matador",
+            "catalogue_number": "OLE 079-0",
+            "country": "US",
+            "year": "2010",
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": "19.99",
+            "image_url": "",
+            "notes": "lorem ipsum",
+            "date_added": "2020-11-20T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 8,
+        "fields": {
+            "discogs_id": "2195793",
+            "shop_id": 3,
+            "name": "Crooked Rain Crooked Rain",
+            "artist": "Pavement",
+            "label": "Matador",
+            "catalogue_number": "OLE 079-0",
+            "country": "US",
+            "year": "2010",
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": "19.99",
+            "image_url": "",
+            "notes": "lorem ipsum",
+            "date_added": "2020-11-20T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 9,
+        "fields": {
+            "discogs_id": "2195793",
+            "shop_id": 1,
+            "name": "Crooked Rain Crooked Rain",
+            "artist": "Pavement",
+            "label": "Matador",
+            "catalogue_number": "OLE 079-0",
+            "country": "US",
+            "year": "2010",
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": "19.99",
+            "image_url": "",
+            "notes": "lorem ipsum",
+            "date_added": "2020-11-20T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 10,
+        "fields": {
+            "discogs_id": "2195793",
+            "shop_id": 1,
+            "name": "Crooked Rain Crooked Rain",
+            "artist": "Pavement",
+            "label": "Matador",
+            "catalogue_number": "OLE 079-0",
+            "country": "US",
+            "year": "2010",
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": "19.99",
+            "image_url": "",
+            "notes": "lorem ipsum",
+            "date_added": "2020-11-20T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 11,
+        "fields": {
+            "discogs_id": "2195793",
+            "shop_id": 5,
+            "name": "Crooked Rain Crooked Rain",
+            "artist": "Pavement",
+            "label": "Matador",
+            "catalogue_number": "OLE 079-0",
+            "country": "US",
+            "year": "2010",
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": "19.99",
+            "image_url": "",
+            "notes": "lorem ipsum",
+            "date_added": "2020-11-20T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 12,
+        "fields": {
+            "discogs_id": "2195793",
+            "shop_id": 3,
+            "name": "Crooked Rain Crooked Rain",
+            "artist": "Pavement",
+            "label": "Matador",
+            "catalogue_number": "OLE 079-0",
+            "country": "US",
+            "year": "2010",
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": "19.99",
+            "image_url": "",
+            "notes": "lorem ipsum",
+            "date_added": "2020-11-20T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 13,
+        "fields": {
+            "discogs_id": "2195793",
+            "shop_id": 5,
+            "name": "Crooked Rain Crooked Rain",
+            "artist": "Pavement",
+            "label": "Matador",
+            "catalogue_number": "OLE 079-0",
+            "country": "US",
+            "year": "2010",
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": "19.99",
+            "image_url": "",
+            "notes": "lorem ipsum",
+            "date_added": "2020-11-20T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 14,
+        "fields": {
+            "discogs_id": "2195793",
+            "shop_id": 2,
+            "name": "Crooked Rain Crooked Rain",
+            "artist": "Pavement",
+            "label": "Matador",
+            "catalogue_number": "OLE 079-0",
+            "country": "US",
+            "year": "2010",
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": "19.99",
+            "image_url": "",
+            "notes": "lorem ipsum",
+            "date_added": "2020-11-20T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 15,
+        "fields": {
+            "discogs_id": "2195793",
+            "shop_id": 1,
+            "name": "Crooked Rain Crooked Rain",
+            "artist": "Pavement",
+            "label": "Matador",
+            "catalogue_number": "OLE 079-0",
+            "country": "US",
+            "year": "2010",
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": "19.99",
+            "image_url": "",
+            "notes": "lorem ipsum",
+            "date_added": "2020-11-20T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 16,
+        "fields": {
+            "discogs_id": "2195793",
+            "shop_id": 1,
+            "name": "Crooked Rain Crooked Rain",
+            "artist": "Pavement",
+            "label": "Matador",
+            "catalogue_number": "OLE 079-0",
+            "country": "US",
+            "year": "2010",
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": "19.99",
+            "image_url": "",
+            "notes": "lorem ipsum",
+            "date_added": "2020-11-20T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 17,
+        "fields": {
+            "discogs_id": "2195793",
+            "shop_id": 2,
+            "name": "Crooked Rain Crooked Rain",
+            "artist": "Pavement",
+            "label": "Matador",
+            "catalogue_number": "OLE 079-0",
+            "country": "US",
+            "year": "2010",
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": "19.99",
+            "image_url": "",
+            "notes": "lorem ipsum",
+            "date_added": "2020-11-20T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 18,
+        "fields": {
+            "discogs_id": "2195793",
+            "shop_id": 3,
+            "name": "Crooked Rain Crooked Rain",
+            "artist": "Pavement",
+            "label": "Matador",
+            "catalogue_number": "OLE 079-0",
+            "country": "US",
+            "year": "2010",
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": "19.99",
+            "image_url": "",
+            "notes": "lorem ipsum",
+            "date_added": "2020-11-20T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 19,
+        "fields": {
+            "discogs_id": "2195793",
+            "shop_id": 3,
+            "name": "Crooked Rain Crooked Rain",
+            "artist": "Pavement",
+            "label": "Matador",
+            "catalogue_number": "OLE 079-0",
+            "country": "US",
+            "year": "2010",
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": "19.99",
+            "image_url": "",
+            "notes": "lorem ipsum",
+            "date_added": "2020-11-20T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 20,
+        "fields": {
+            "discogs_id": "2195793",
+            "shop_id": 5,
+            "name": "Crooked Rain Crooked Rain",
+            "artist": "Pavement",
+            "label": "Matador",
+            "catalogue_number": "OLE 079-0",
+            "country": "US",
+            "year": "2010",
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": "19.99",
+            "image_url": "",
+            "notes": "lorem ipsum",
+            "date_added": "2020-11-20T12:35:37+00:00"
+        }
+    }
+]
