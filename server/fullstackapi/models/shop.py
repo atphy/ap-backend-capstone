@@ -1,7 +1,5 @@
 """Shop Model Module"""
 from django.db import models
-from django import forms
-from localflavor.us.forms import USZipCodeField
 
 class Shop(models.Model):
     """Shop Model"""

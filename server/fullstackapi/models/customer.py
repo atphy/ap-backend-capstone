@@ -1,7 +1,5 @@
 """Customer Model Module"""
 from django.db import models
-from django import forms
-from localflavor.us.forms import USZipCodeField
 
 class Customer(models.Model):
     """Customer Model"""
