@@ -1,2 +1,2 @@
 # ap-backend-capstone
-Server
+Client
