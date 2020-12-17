@@ -46,3 +46,7 @@ The idea came from several conversations with the owner of a (now-closed) record
 - Stores are able to add inventory via .csv import or barcode scan.
 - Stores can choose to add records to a Discogs store and sell directly online
 - Stores can sync their Fullstack inventory with an existing database, with changes in one reflected in the other (absolutely not attainable any time soon but sounds cool doesn’t it)
+
+#### ERD: https://dbdiagram.io/d/5fd10f309a6c525a03ba768a
+
+#### Moqup/Wireframes: https://miro.com/app/board/o9J_lbov9pc=/
