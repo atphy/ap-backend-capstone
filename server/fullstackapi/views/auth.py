@@ -12,7 +12,7 @@ def login_user(request):
     '''Handles the authentication of a profile
 
     Method arguments:
-      request -- The full HTTP request object
+    request -- The full HTTP request object
     '''
 
     req_body = json.loads(request.body.decode())
@@ -42,7 +42,7 @@ def register_user(request):
     '''Handles the creation of a new profile for authentication
 
     Method arguments:
-      request -- The full HTTP request object
+    request -- The full HTTP request object
     '''
 
     # Load the JSON string of the request body into a dict

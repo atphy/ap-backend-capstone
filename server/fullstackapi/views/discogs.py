@@ -1,0 +1,1 @@
+# https://stackoverflow.com/questions/30259452/proper-way-to-consume-data-from-restful-api-in-django
