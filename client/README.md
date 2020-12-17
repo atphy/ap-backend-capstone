@@ -1,2 +1,0 @@
-# ap-backend-capstone
-Client
