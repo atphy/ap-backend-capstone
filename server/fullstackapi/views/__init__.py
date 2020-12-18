@@ -5,3 +5,4 @@ from .record import Records
 from .stack import Stacks
 from .profile import Profiles
 from .customer import Customers
+from .inventory import Inventory
