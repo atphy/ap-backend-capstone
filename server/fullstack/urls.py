@@ -6,7 +6,7 @@ from fullstackapi.views import Shops, Records, Stacks, Profiles, Customers
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'shops', Shops, 'shop')
-router.register(r'stacks', Stacks, 'stack')
+router.register(r'my_stack', Stacks, 'stack')
 router.register(r'records', Records, 'record')
 router.register(r'profiles', Profiles, 'profile')
 router.register(r'customers', Customers, 'customer')
