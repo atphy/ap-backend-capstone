@@ -45,7 +45,6 @@ The idea came from several conversations with the owner of a (now-closed) record
   - OR create an internal feature where stores can review stack item availability and, if not in stock, remove from stock and inform customer from the same page
 - Stores are able to add inventory via .csv import or barcode scan.
 - Stores can choose to add records to a Discogs store and sell directly online
-- Stores can sync their Fullstack inventory with an existing database, with changes in one reflected in the other (absolutely not attainable any time soon but sounds cool doesn’t it)
 
 #### ERD: https://dbdiagram.io/d/5fd10f309a6c525a03ba768a
 
