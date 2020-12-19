@@ -4,7 +4,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 from django.views.decorators.csrf import csrf_exempt
-from fullstackapi.models import Profile
+from fullstackapi.models import Profile, Shop, Customer
 
 
 @csrf_exempt
@@ -50,7 +50,7 @@ def register_user(request):
 
     # Create a new user by invoking the `create_user` helper method
     # on Django's built-in User model
-    new_user = User.objects.create_user(
+    new_user = User.objects.create(
         username=req_body['username'],
         email=req_body['email'],
         password=req_body['password'],
@@ -64,8 +64,36 @@ def register_user(request):
         user=new_user
     )
 
-    # Commit the user to the database by saving it
-    profile.save()
+    if profile.profile_type == 1:
+        new_user.save()
+        profile.save()
+
+    # TO-DO Make sure all info is present before saving!! If profile_type = 2 save Shop info
+    if profile.profile_type == 2:
+        shop = Shop.objects.create(
+            profile = profile,
+            verified = False,
+            address = req_body['address'],
+            city = req_body['city'],
+            state = req_body['state'],
+            zip_code = req_body['zip_code'],
+            contact_phone = req_body['contact_phone'],
+            contact_email = req_body['contact_email']
+        )
+        shop.save()
+        new_user.save()
+        profile.save()
+
+    # TO-DO Make sure all info is present before saving!! If profile_type = 3 save Customer info
+    elif profile.profile_type == 3:
+        customer = Customer.objects.create(
+            profile = profile,
+            default_zip = req_body['default_zip'],
+            phone = req_body['phone']
+        )
+        new_user.save()
+        profile.save()
+        customer.save()
 
     # Use the REST Framework's token generator on the new user account
     token = Token.objects.create(user=new_user)
