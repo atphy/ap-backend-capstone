@@ -25,7 +25,6 @@ The idea came from several conversations with the owner of a (now-closed) record
 
 ### Features included in MVP Definition: 
 - Stores are able to create a profile, to be sent to an approval queue
-- On approval, stores are able to set a store name and contact info
 - Stores are able to search for records on Discogs and, if a match is found, populate that info into an “add record to inventory” form (if no match, this form is blank)
 - Stores are able to edit records and remove them from their inventory
 - Customers are able to browse store inventories without auth
