@@ -32,9 +32,9 @@ The idea came from several conversations with the owner of a (now-closed) record
 - Stack can be filtered by store or show all wishlisted items across stores
 - Customers can search for records across all stores to find any nearby matches
 - Customers are able to click on a “detail view” to display more information about records
-- Customers and stores are able to edit profile details
 
 ### Features that are Stretch Goals:
+- Customers and stores are able to edit profile details
 - Stores are able to customize the look of their storefronts (upload images, change colors of text and backgrounds)
 - Cool spinning record animation while results load! I don’t know how to do this!
 - Stores can “pin” records to home page view carousel
