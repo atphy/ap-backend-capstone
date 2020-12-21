@@ -1,15 +1,15 @@
-import services
-class ArtistSearch(generic.TemplateView):
-    def get(self,request):
+#from fullstackapi.services import search_artist
+# class ArtistSearch(generic.TemplateView):
+#    def get(self,request):
 
-        artist = request.data["artist"]
+#        artist = request.data["artist"]
 
-        artist_list = services.search_artist(artist)
+#        artist_list = search_artist(artist)
         
-        serializer = ArtistSearchSerializer(
-            artist_list, many=True, context={'request': request})
-        return Response(serializer.data)
+#        serializer = ArtistSearchSerializer(
+#            artist_list, many=True, context={'request': request})
+#        return Response(serializer.data)
 
-class ArtistSearchSerializer(serializers.ModelSerializer):
-    class Meta:
-        fields = ('id')
+# class ArtistSearchSerializer(serializers.ModelSerializer):
+#    class Meta:
+#        fields = ('id', 'title', 'thumb')

@@ -1,4 +1,4 @@
-import discogs_auth
+import fullstackapi.discogs_auth
 
 # Defines calls a Shop will use in adding records to their Inventory
 # Flows as follows: Shop searches for an artist -> Shop selects an artist -> artist's master releases are returned -> 
