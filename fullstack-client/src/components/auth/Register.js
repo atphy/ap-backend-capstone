@@ -7,12 +7,14 @@ import { RegisterShop } from "./RegisterShop"
 
 export const Register = (props) => {
 
+    const [selectedProfileType, setProfileType] = useState(3)
+
     const first_name = useRef()
     const last_name = useRef()
     const email = useRef()
     const username = useRef()
     const password = useRef()
-    const profile_type = useRef()
+    const profile_type = selectedProfileType
     const verifyPassword = useRef()
     const passwordDialog = useRef()
     const zip_code = useRef()
@@ -28,7 +30,7 @@ export const Register = (props) => {
                 "username": username.current.value,
                 "email": email.current.value,
                 "password": password.current.value,
-                "profile_type": profile_type.current.value,
+                "profile_type": profile_type,
                 "zip_code": zip_code.current.value,
                 "contact_phone": contact_phone.current.value
             }
@@ -51,8 +53,8 @@ export const Register = (props) => {
         }
     }
 
-    const shopRegister = () => {
-        console.warn(profile_type.current.value)
+    const shopRegister = (type) => {
+        setProfileType(type)
     }
 
     return (
@@ -66,10 +68,10 @@ export const Register = (props) => {
             <form className="form--login form--register" onSubmit={handleRegister}>
                 <h1 className="h3 mb-3 font-weight-normal">Register</h1>
                 <fieldset className="register-input">
-                <div onChange={shopRegister}>
-                    <input ref={profile_type} type="radio" value="3" name="profile_type" defaultChecked/> Register as a customer
-                    <input ref={profile_type} type="radio" value="2" name="profile_type" /> Register as a shop
-                </div>
+                <fieldset>
+                    <input type="radio" value="3" name="profile_type" onClick={e => shopRegister(3)} defaultChecked /> Register as a customer
+                    <input type="radio" value="2" name="profile_type" onClick={e => shopRegister(2)} /> Register as a shop
+                </fieldset>
 
                 </fieldset>
                 <fieldset className="register-input">
@@ -90,7 +92,7 @@ export const Register = (props) => {
                 <fieldset className="register-input">
                     <input ref={verifyPassword} type="password" name="verifyPassword" className="form-control" placeholder="Verify password" required />
                 </fieldset>
-                {profile_type === 2 ? "Shop" : "Customer"}
+                {selectedProfileType === 2 ? <RegisterShop /> : null}
                 <fieldset className="register-input">
                     <input ref={zip_code} type="text" name="zip_code" className="form-control" placeholder="ZIP Code" required />
                 </fieldset>
