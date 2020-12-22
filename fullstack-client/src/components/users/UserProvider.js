@@ -10,7 +10,7 @@ export const UserProvider = (props) => {
     const [currentUserProfile, setCurrentUserProfile] = useState({})
 
     const getUsers = () => {
-        return fetch("http://localhost:8000/users", {
+        return fetch("http://localhost:8000/profiles", {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("fullstack_token")}`,
                 "Content-Type": "application/json"
@@ -21,7 +21,7 @@ export const UserProvider = (props) => {
     }
 
     const getCurrentUser = () => {
-        return fetch("http://localhost:8000/users/current_user", {
+        return fetch("http://localhost:8000/profiles/current_user", {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("fullstack_token")}`,
                 "Content-Type": "application/json"
@@ -29,6 +29,7 @@ export const UserProvider = (props) => {
         })
             .then(res => res.json())
             .then(setCurrentUser)
+                .then(console.warn(currentUser))
     }
 
     const getUserProfile = (userId) => {
