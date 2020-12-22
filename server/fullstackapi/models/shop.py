@@ -12,3 +12,19 @@ class Shop(models.Model):
     zip_code = models.IntegerField()
     contact_phone = models.CharField(max_length=10)
     contact_email = models.CharField(max_length=30)
+
+    @property
+    def username(self):
+        return self.profile.username
+
+    @property
+    def first_name(self):
+        return self.profile.first_name
+
+    @property
+    def last_name(self):
+        return self.profile.last_name
+
+    @property
+    def email(self):
+        return self.profile.email

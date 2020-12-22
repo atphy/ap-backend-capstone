@@ -7,7 +7,6 @@ from rest_framework import serializers
 from rest_framework.decorators import action
 from fullstackapi.models import Shop, Record, Profile
 
-
 class Shops(ViewSet):
     """Fullstack shops"""
 
@@ -46,19 +45,18 @@ class Shops(ViewSet):
         except Exception as ex:
             return HttpResponseServerError(ex)
 
-    @action(methods=['get', 'put'], detail=True)
+    @action(methods=['get', 'patch'], detail=True)
     def verification(self,request, pk=None):
         """Manages admins verifying shops"""
         current_profile = Profile.objects.get(user=request.auth.user)
 
         if current_profile.profile_type == 1:
-            if request.method == "PUT":
-                shop = Shop.objects.get(pk=pk)
+            shop = Shop.objects.get(pk=pk)
 
-                shop.verified = True
-                shop.save()
+            shop.verified = not shop.verified
+            shop.save()
 
-                return Response({}, status=status.HTTP_204_NO_CONTENT)
+            return Response({}, status=status.HTTP_204_NO_CONTENT)
 
         else: 
             return Response({"reason": "you are not authorized to perform that action"}, status=status.HTTP_400_BAD_REQUEST)
@@ -77,4 +75,4 @@ class ShopRecordsSerializer(serializers.ModelSerializer):
 class ShopSerializer(serializers.ModelSerializer):
     class Meta:
         model = Shop
-        fields = ('id', 'profile', 'verified', 'address', 'city', 'state', 'zip_code', 'contact_phone', 'contact_email')
+        fields = ('id', 'profile', 'verified', 'username', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zip_code', 'contact_phone', 'contact_email')
