@@ -5,6 +5,7 @@ export const ShopContext = React.createContext()
 export const ShopProvider = (props) => {
 
     const [shops, setShops] = useState([])
+    const [singleShop, setSingleShop] = useState({})
 
 
     const getShops = () => {
@@ -16,6 +17,17 @@ export const ShopProvider = (props) => {
         })
             .then(res => res.json())
             .then(setShops)
+    }
+
+    const getSingleShop = (shopId) => {
+        return fetch(`http://localhost:8000/shops/${shopId}`, {
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("fullstack_token")}`,
+                "Content-Type": "application/json"
+            }
+        })
+            .then(res => res.json())
+            .then(setSingleShop)
     }
 
     const verifyShop = (shopId) => {
@@ -31,7 +43,7 @@ export const ShopProvider = (props) => {
 
     return (
         <ShopContext.Provider value={{
-            shops, getShops, verifyShop
+            shops, getShops, verifyShop, getSingleShop, singleShop
         }}>
             {props.children}
         </ShopContext.Provider>

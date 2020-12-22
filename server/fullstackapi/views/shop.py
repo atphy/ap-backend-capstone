@@ -71,7 +71,7 @@ class ShopRecordsSerializer(serializers.ModelSerializer):
     records = RecordSerializer(many=True)
     class Meta:
         model = Shop
-        fields = ('id', 'profile', 'verified', 'address', 'city', 'state', 'zip_code', 'contact_phone', 'contact_email')
+        fields = ('id', 'profile', 'verified', 'username', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zip_code', 'contact_phone', 'contact_email')
 class ShopSerializer(serializers.ModelSerializer):
     class Meta:
         model = Shop
