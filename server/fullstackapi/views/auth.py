@@ -88,8 +88,8 @@ def register_user(request):
     elif profile.profile_type == 3:
         customer = Customer.objects.create(
             profile = profile,
-            default_zip = req_body['default_zip'],
-            phone = req_body['phone']
+            default_zip = req_body['zip_code'],
+            phone = req_body['contact_phone']
         )
         new_user.save()
         profile.save()
