@@ -5,6 +5,7 @@ import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import "./Fullstack.css"
 import { UserProvider } from "./users/UserProvider"
+import { ShopProvider } from './Shops/ShopProvider'
 
 export const Fullstack = () => (
     <>
@@ -13,12 +14,14 @@ export const Fullstack = () => (
 
                 return (
                     <>
+                    <ShopProvider>
                     <UserProvider>
                         <Route render={props =>
                             <ApplicationViews
                             {...props}  />} />
 
                     </UserProvider>
+                    </ShopProvider>
                     </>
                 )
             }

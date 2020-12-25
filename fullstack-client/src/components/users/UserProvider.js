@@ -29,7 +29,6 @@ export const UserProvider = (props) => {
         })
             .then(res => res.json())
             .then(setCurrentUser)
-                .then(console.warn(currentUser))
     }
 
     const getUserProfile = (userId) => {

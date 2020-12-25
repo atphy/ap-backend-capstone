@@ -30,6 +30,17 @@ export const ShopProvider = (props) => {
             .then(setSingleShop)
     }
 
+    const getAuthedShop = () => {
+        return fetch(`http://localhost:8000/shops/authed_shop`, {
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("fullstack_token")}`,
+                "Content-Type": "application/json"
+            }
+        })
+            .then(res => res.json())
+            .then(setSingleShop)
+    }
+
     const verifyShop = (shopId) => {
         return fetch(`http://localhost:8000/shops/${shopId}/verification`, {
             method: "PATCH",
@@ -43,7 +54,7 @@ export const ShopProvider = (props) => {
 
     return (
         <ShopContext.Provider value={{
-            shops, getShops, verifyShop, getSingleShop, singleShop
+            shops, getShops, verifyShop, getSingleShop, getAuthedShop, singleShop
         }}>
             {props.children}
         </ShopContext.Provider>
