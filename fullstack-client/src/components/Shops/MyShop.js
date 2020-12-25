@@ -1,19 +1,32 @@
-import React, {useEffect, useContext} from "react";
-import { Route } from "react-router-dom"
-import { ShopProvider, ShopContext } from './ShopProvider'
-import { ShopVerification } from "./ShopVerification";
-
+import React, {useEffect, useContext, useState} from "react";
+import { Loading } from "../Loading/Loading";
+import { ShopContext } from './ShopProvider'
+import { ShopRecordList } from "./ShopRecordList/ShopRecordList";
+import { ShopVerification } from './ShopVerification';
+//here
 export const MyShop = (props) => {
 
-    const { getSingleShop, singleShop } = useContext(ShopContext)
+    const { getAuthedShop, singleShop } = useContext(ShopContext)
+    const [currentShop, setCurrentShop] = useState({});
 
     useEffect(()=>{
-        getSingleShop(2)
-    }, [])
+        getAuthedShop()
+            .then(setCurrentShop(singleShop))
+            .then(console.warn(singleShop))
+    }, [singleShop])
     
-    return (
-            <> 
-            <h1>hi {singleShop.shop.username}</h1>
-            </>  
+
+    if (currentShop === undefined) {
+        return <Loading />
+    } else {
+
+        return (
+            <div>{currentShop.verified ? 
+            <div>
+            <h1>{currentShop.username}</h1>
+            <ShopRecordList currentShop={currentShop}/>
+            </div>
+            :<ShopVerification currentShop={currentShop}/> }</div>
         )
+        }
     }

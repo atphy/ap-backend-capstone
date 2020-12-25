@@ -36,8 +36,7 @@ class Shops(ViewSet):
             shop = ShopSerializer(
                 shop, many=False, context={'request': request})
 
-            shop_records = {}
-            shop_records["shop"] = shop.data
+            shop_records = shop.data
             shop_records["records"] = records.data
 
             # serializer = ShopRecordsSerializer(shop, context={'request': request})
@@ -60,6 +59,22 @@ class Shops(ViewSet):
 
         else: 
             return Response({"reason": "you are not authorized to perform that action"}, status=status.HTTP_400_BAD_REQUEST)
+
+    @action(methods=['get'], detail=False)
+    def authed_shop(self, request):
+        authed_shop = Shop.objects.get(profile=request.auth.user.id)
+        records = Record.objects.filter(shop_id=authed_shop)
+
+        records = RecordSerializer(
+            records, many=True, context={'request': request})
+        authed_shop = ShopSerializer(
+            authed_shop, many=False, context={'request': request})
+
+        shop_records = authed_shop.data
+        shop_records["records"] = records.data
+
+        # serializer = ShopRecordsSerializer(shop, context={'request': request})
+        return Response(shop_records)
 class RecordSerializer(serializers.HyperlinkedModelSerializer):
     """JSON serializer for records"""
     class Meta:

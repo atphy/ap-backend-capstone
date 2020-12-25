@@ -1,10 +1,11 @@
-import React, {useEffect, useContext} from "react";
+import React, {useEffect, useContext, useState} from "react";
 import { Route, Redirect } from "react-router-dom"
 import { ApproveShop } from './admin/ApproveShop'
 import { MyShop } from './Shops/MyShop'
 import { Customers } from './Customers/Customers'
 import { UserProvider, UserContext } from './users/UserProvider'
 import { ShopProvider } from './Shops/ShopProvider'
+import { RecordProvider } from './Records/RecordProvider'
 
 export const ApplicationViews = (props) => {
 
@@ -22,7 +23,7 @@ export const ApplicationViews = (props) => {
                 return <Redirect to="/admin" />
 
             } else if (currentUser.profile_type === 2) {
-                
+
                 return <Redirect to="/myshop" />
 
             } else if (currentUser.profile_type === 3) {
@@ -51,9 +52,11 @@ export const ApplicationViews = (props) => {
             } else {
                 return (
                 <>
+                <RecordProvider>
                 <ShopProvider>
                     <MyShop currentUser={currentUser} {...props} />
                 </ShopProvider>
+                </RecordProvider>
                 </>
                 )
             }
