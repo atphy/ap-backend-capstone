@@ -24,14 +24,14 @@ There are two major targets for Fullstack: independent record stores and their c
 The idea came from several conversations with the owner of a (now-closed) record store in my hometown when I’d just started teaching myself a little bit of programming and thought everything would be a lot easier than it is. Small independent stores can have all the absolute treasures in the world, but if no one is browsing then it hardly matters. Unsurprisingly many record stores, dealing primarily in an outdated medium, tend to have very traditional methods of dealing with inventory and getting customers in the door. This project would use the massive amounts of data on Discogs to aid stores in getting information on goods they’re hoping to sell, along with creating more opportunities to interact with customers via the virtual storefront.
 
 ### Features included in MVP Definition: 
-- Stores are able to create a profile, to be sent to an approval queue
-- Stores are able to search for records on Discogs and, if a match is found, populate that info into an “add record to inventory” form (if no match, this form is blank)
-- Stores are able to edit records and remove them from their inventory
-- Customers are able to browse store inventories without auth
-- Customers are able to create a stack once authed
-- Stack can be filtered by store or show all wishlisted items across stores
-- Customers can search for records across all stores to find any nearby matches
-- Customers are able to click on a “detail view” to display more information about records
+- [x] Stores are able to create a profile, to be sent to an approval queue
+- [ ] Stores are able to search for records on Discogs and, if a match is found, populate that info into an “add record to inventory” form (if no match, this form is blank)
+- [ ] Stores are able to edit records and remove them from their inventory
+- [ ] Customers are able to browse store inventories without auth
+- [ ] Customers are able to create a stack once authed
+- [ ] Stack can be filtered by store or show all wishlisted items across stores
+- [ ] Customers can search for records across all stores to find any nearby matches
+- [ ] Customers are able to click on a “detail view” to display more information about records
 
 ### Features that are Stretch Goals:
 - Customers and stores are able to edit profile details
