@@ -1,6 +1,7 @@
 """Shop Model Module"""
 from django.db import models
 from django.contrib.auth.models import User
+from .record import Record
 
 class Shop(models.Model):
     """Shop Model"""
@@ -28,3 +29,8 @@ class Shop(models.Model):
     @property
     def email(self):
         return self.profile.email
+
+    @property
+    def records(self):
+        records = Record.objects.filter(shop_id=self)
+        return records

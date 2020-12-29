@@ -81,6 +81,11 @@ class RecordSerializer(serializers.HyperlinkedModelSerializer):
         model = Record
         fields = ('id', 'name', 'artist', 'price', 'image_url', 'date_added')
 
+class RecordDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Record
+        fields = ('id', 'shop_id', 'name', 'artist', 'label', 'catalogue_number', 'country', 'year', 'media_condition', 'sleeve_condition', 'price', 'image_url', 'notes')
+
 class ShopRecordsSerializer(serializers.ModelSerializer):
 
     records = RecordSerializer(many=True)
@@ -88,6 +93,7 @@ class ShopRecordsSerializer(serializers.ModelSerializer):
         model = Shop
         fields = ('id', 'profile', 'verified', 'username', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zip_code', 'contact_phone', 'contact_email')
 class ShopSerializer(serializers.ModelSerializer):
+    records = RecordSerializer(many=True)
     class Meta:
         model = Shop
-        fields = ('id', 'profile', 'verified', 'username', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zip_code', 'contact_phone', 'contact_email')
+        fields = ('id', 'profile', 'verified', 'username', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zip_code', 'contact_phone', 'contact_email', 'records')
