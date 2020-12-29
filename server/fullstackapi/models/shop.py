@@ -2,6 +2,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from .record import Record
+from pyzipcode import ZipCodeDatabase
+from geopy import distance
 
 class Shop(models.Model):
     """Shop Model"""
@@ -34,3 +36,18 @@ class Shop(models.Model):
     def records(self):
         records = Record.objects.filter(shop_id=self)
         return records
+
+    @property
+    def location(self):
+        zcdb = ZipCodeDatabase()
+        location_zip = zcdb[self.zip_code]
+        location = [location_zip.latitude, location_zip.longitude]
+        return location
+    
+    @property
+    def customer_distance(self):
+        zcdb = ZipCodeDatabase()
+        customer_zip = zcdb[37216]
+        customer_location = [customer_zip.latitude, customer_zip.longitude]
+        location_distance = distance.distance(self.location, customer_location).km
+        return location_distance

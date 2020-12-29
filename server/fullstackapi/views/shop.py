@@ -75,6 +75,7 @@ class Shops(ViewSet):
 
         # serializer = ShopRecordsSerializer(shop, context={'request': request})
         return Response(shop_records)
+
 class RecordSerializer(serializers.HyperlinkedModelSerializer):
     """JSON serializer for records"""
     class Meta:
@@ -91,9 +92,9 @@ class ShopRecordsSerializer(serializers.ModelSerializer):
     records = RecordSerializer(many=True)
     class Meta:
         model = Shop
-        fields = ('id', 'profile', 'verified', 'username', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zip_code', 'contact_phone', 'contact_email')
+        fields = ('id', 'profile', 'verified', 'username', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zip_code', 'contact_phone', 'contact_email', 'location', 'customer_distance')
 class ShopSerializer(serializers.ModelSerializer):
     records = RecordSerializer(many=True)
     class Meta:
         model = Shop
-        fields = ('id', 'profile', 'verified', 'username', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zip_code', 'contact_phone', 'contact_email', 'records')
+        fields = ('id', 'profile', 'verified', 'username', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zip_code', 'contact_phone', 'contact_email', 'location', 'customer_distance', 'records')
