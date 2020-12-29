@@ -6,6 +6,7 @@ import { Customers } from './Customers/Customers'
 import { UserProvider, UserContext } from './users/UserProvider'
 import { ShopProvider } from './Shops/ShopProvider'
 import { RecordProvider } from './Records/RecordProvider'
+import { CustomerProvider } from './Customers/CustomerProvider' 
 
 export const ApplicationViews = (props) => {
 
@@ -54,7 +55,7 @@ export const ApplicationViews = (props) => {
                 <>
                 <RecordProvider>
                 <ShopProvider>
-                    <MyShop currentUser={currentUser} {...props} />
+                    <MyShop {...props} />
                 </ShopProvider>
                 </RecordProvider>
                 </>
@@ -65,9 +66,13 @@ export const ApplicationViews = (props) => {
         <Route path="/home" render={(props) => {
             return (
             <>
-            <UserProvider>
+            <RecordProvider>
+            <ShopProvider>
+            <CustomerProvider>
                 <Customers {...props} />
-            </UserProvider>
+            </CustomerProvider>
+            </ShopProvider>
+            </RecordProvider>
             </>
             )
         }} />

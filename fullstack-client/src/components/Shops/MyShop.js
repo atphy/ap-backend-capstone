@@ -3,30 +3,30 @@ import { Loading } from "../Loading/Loading";
 import { ShopContext } from './ShopProvider'
 import { ShopRecordList } from "./ShopRecordList/ShopRecordList";
 import { ShopVerification } from './ShopVerification';
-//here
+
 export const MyShop = (props) => {
 
     const { getAuthedShop, singleShop } = useContext(ShopContext)
-    const [currentShop, setCurrentShop] = useState({});
 
     useEffect(()=>{
         getAuthedShop()
-            .then(setCurrentShop(singleShop))
-            .then(console.warn(singleShop))
-    }, [singleShop])
+    }, [])
     
 
-    if (currentShop === undefined) {
+    if (singleShop === undefined) {
+
         return <Loading />
+
     } else {
 
         return (
-            <div>{currentShop.verified ? 
+            <div>{singleShop.verified ? 
             <div>
-            <h1>{currentShop.username}</h1>
-            <ShopRecordList currentShop={currentShop}/>
+            <h1>{singleShop.username}</h1>
+            <button>Add Record</button>
+            <ShopRecordList getAuthedShop={getAuthedShop} profile_type={"shop"} currentShop={singleShop}/>
             </div>
-            :<ShopVerification currentShop={currentShop}/> }</div>
+            :<ShopVerification currentShop={singleShop}/> }</div>
         )
         }
     }
