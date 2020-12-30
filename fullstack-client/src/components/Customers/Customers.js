@@ -3,6 +3,7 @@ import { Loading } from "../Loading/Loading";
 import { ShopContext } from "../Shops/ShopProvider";
 import { CustomerContext } from './CustomerProvider'
 import { CustomerShopList } from './CustomerShopList/CustomerShopList'
+import { Link } from "react-router-dom"
 
 export const Customers = (props) => {
 
@@ -43,6 +44,7 @@ export const Customers = (props) => {
     } else {
         return ( 
             <div>
+            <Link to={{pathname:`/my_stack`}}>My Stack</Link>
             <h1>Showing Record Shops Within</h1>
             <input min="50" max="300" onChange={searchRadiusHandler} ref={newRadius} defaultValue={searchRadius} type="number" step="50" ></input>
             <h1>miles of</h1>

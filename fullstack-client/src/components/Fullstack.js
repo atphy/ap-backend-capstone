@@ -54,5 +54,13 @@ export const Fullstack = () => (
                 }
             }} />
         </UserProvider>
+
+        <Route path="/test" render={(props) => {
+                return (
+                <>
+                <h1>hi</h1>
+                </>
+                )
+        }} />
     </>
 )

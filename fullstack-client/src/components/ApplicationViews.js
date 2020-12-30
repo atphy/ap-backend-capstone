@@ -6,7 +6,9 @@ import { Customers } from './Customers/Customers'
 import { UserProvider, UserContext } from './users/UserProvider'
 import { ShopProvider } from './Shops/ShopProvider'
 import { RecordProvider } from './Records/RecordProvider'
-import { CustomerProvider } from './Customers/CustomerProvider' 
+import { CustomerProvider } from './Customers/CustomerProvider'
+import { MyStack } from './Customers/Stacks/MyStack'
+import { StackProvider } from './Customers/Stacks/StackProvider'
 
 export const ApplicationViews = (props) => {
 
@@ -53,26 +55,52 @@ export const ApplicationViews = (props) => {
             } else {
                 return (
                 <>
+                <StackProvider>
                 <RecordProvider>
                 <ShopProvider>
                     <MyShop {...props} />
                 </ShopProvider>
                 </RecordProvider>
+                </StackProvider>
                 </>
                 )
             }
         }} />
 
         <Route path="/home" render={(props) => {
+            if (currentUser.profile_type !== 3) {
+                return <Redirect to="/" />
+            } else {
             return (
             <>
+            <StackProvider>
             <RecordProvider>
             <ShopProvider>
             <CustomerProvider>
+                
                 <Customers {...props} />
+        
             </CustomerProvider>
             </ShopProvider>
             </RecordProvider>
+            </StackProvider>
+            </>
+            )
+            }
+        }} />
+
+        <Route path="/my_stack" render={(props) => {
+            return (
+            <>
+            <StackProvider>
+            <RecordProvider>
+            <ShopProvider>
+            <CustomerProvider>
+                <MyStack {...props} />
+            </CustomerProvider>
+            </ShopProvider>
+            </RecordProvider>
+            </StackProvider>
             </>
             )
         }} />

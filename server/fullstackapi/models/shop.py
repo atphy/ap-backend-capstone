@@ -50,4 +50,5 @@ class Shop(models.Model):
         customer_zip = zcdb[37216]
         customer_location = [customer_zip.latitude, customer_zip.longitude]
         location_distance = distance.distance(self.location, customer_location).km
-        return location_distance
+        rounded_distance = round(location_distance, 1)
+        return rounded_distance
