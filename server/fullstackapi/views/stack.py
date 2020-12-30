@@ -70,4 +70,4 @@ class StackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Stack
         fields = ('id', 'customer_id', 'record')
-        #depth = 1
+        depth = 1

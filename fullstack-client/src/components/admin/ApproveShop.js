@@ -1,5 +1,7 @@
 import React, {useContext, useEffect} from "react";
 import { ShopContext } from '../Shops/ShopProvider'
+import { Redirect } from "react-router-dom"
+import { Loading } from '../Loading/Loading'
 
 export const ApproveShop = (props) => {
 
@@ -14,9 +16,14 @@ export const ApproveShop = (props) => {
         verifyShop(e.target.id)
 }
 
-
-    return (
-        <>
+if (!props.currentUserProfile) {
+    return <Loading />
+} else {
+    if (props.currentUserProfile !== 1) {
+    return <Redirect to="/" />
+    } else {
+        return (
+            <>
             <main className="main-container" style={{ margin: "0 0", lineHeight: "1.75rem", }}> 
             {shops.map(shop => {
                             return (
@@ -32,4 +39,6 @@ export const ApproveShop = (props) => {
             </main>
         </>
     )
+                    }
+                    }
 };

@@ -9,7 +9,7 @@ import { ShopProvider } from './Shops/ShopProvider'
 
 export const Fullstack = () => (
     <>
-        <Route render={() => {
+        <Route path="/" render={() => {
             if (localStorage.getItem("fullstack_token")) {
 
                 return (
@@ -54,5 +54,13 @@ export const Fullstack = () => (
                 }
             }} />
         </UserProvider>
+
+        <Route path="/test" render={(props) => {
+                return (
+                <>
+                <h1>hi</h1>
+                </>
+                )
+        }} />
     </>
 )
