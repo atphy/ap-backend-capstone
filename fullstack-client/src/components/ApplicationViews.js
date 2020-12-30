@@ -20,89 +20,29 @@ export const ApplicationViews = (props) => {
     
     return (
         <>
-        <Route render={() => {
-            if (currentUser.profile_type === 1) {
-
-                return <Redirect to="/admin" />
-
-            } else if (currentUser.profile_type === 2) {
-
-                return <Redirect to="/myshop" />
-
-            } else if (currentUser.profile_type === 3) {
-                
-                return <Redirect to="/home" />
-            }
-        }} />
-
-        <Route path="/admin" render={(props) => {
-            if (currentUser.profile_type !== 1) {
-                return <Redirect to="/" />
-            } else {
-                return (
-                <>
-                <ShopProvider>
-                    <ApproveShop {...props} />
-                </ShopProvider>
-                </>
-                )
-            }
-        }} />
-
-        <Route path="/myshop" render={(props) => {
-            if (currentUser.profile_type !== 2) {
-                return <Redirect to="/" />
-            } else {
-                return (
-                <>
-                <StackProvider>
-                <RecordProvider>
-                <ShopProvider>
-                    <MyShop {...props} />
-                </ShopProvider>
-                </RecordProvider>
-                </StackProvider>
-                </>
-                )
-            }
-        }} />
-
-        <Route path="/home" render={(props) => {
-            if (currentUser.profile_type !== 3) {
-                return <Redirect to="/" />
-            } else {
+        <Route path="/" render={(props) => {
             return (
             <>
             <StackProvider>
             <RecordProvider>
             <ShopProvider>
             <CustomerProvider>
-                
-                <Customers {...props} />
-        
+                <Route exact path="/" render={(props) =>
+                    <Customers currentUserProfile={currentUser.profile_type} {...props} />}/>
+                <Route exact path="/my_stack" render={(props) =>
+                    <MyStack {...props} />}/>
+                <Route exact path="/admin" render={(props) =>
+                    <ApproveShop currentUserProfile={currentUser.profile_type} {...props} />}/>
+            <Route exact path="/myshop" render={(props) =>
+                    <MyShop currentUserProfile={currentUser.profile_type} {...props} />}/>
             </CustomerProvider>
             </ShopProvider>
             </RecordProvider>
             </StackProvider>
             </>
             )
-            }
-        }} />
 
-        <Route path="/my_stack" render={(props) => {
-            return (
-            <>
-            <StackProvider>
-            <RecordProvider>
-            <ShopProvider>
-            <CustomerProvider>
-                <MyStack {...props} />
-            </CustomerProvider>
-            </ShopProvider>
-            </RecordProvider>
-            </StackProvider>
-            </>
-            )
+
         }} />
         </>  
     )

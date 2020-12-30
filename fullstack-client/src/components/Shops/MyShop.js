@@ -1,4 +1,5 @@
 import React, {useEffect, useContext, useState} from "react";
+import { Redirect } from "react-router-dom"
 import { Loading } from "../Loading/Loading";
 import { ShopContext } from './ShopProvider'
 import { ShopRecordList } from "./ShopRecordList/ShopRecordList";
@@ -13,11 +14,14 @@ export const MyShop = (props) => {
     }, [])
     
 
-    if (singleShop === undefined) {
+    if (singleShop === undefined || !props.currentUserProfile) {
 
         return <Loading />
 
     } else {
+        if (props.currentUserProfile !== 2) {
+            return <Redirect to="/" />
+            } else {
 
         return (
             <div>{singleShop.verified ? 
@@ -29,4 +33,5 @@ export const MyShop = (props) => {
             :<ShopVerification currentShop={singleShop}/> }</div>
         )
         }
+    }
     }
