@@ -13,11 +13,17 @@ export const Customers = (props) => {
     const [useDefaultZip, setUseDefaultZip] = useState(true)
 
     useEffect(()=>{
-        getAuthedCustomer()
+        if (props.currentUserProfile === 3) {
+            getAuthedCustomer()
+        }
     }, [])
 
     useEffect(() => {
-        setSearchZip(singleCustomer.default_zip)  
+        if (props.currentUserProfile === 3) {
+            setSearchZip(singleCustomer.default_zip) 
+        } else {
+            setSearchZip(37216)
+        }
     }, [singleCustomer])
 
     const newZIP = useRef()
@@ -39,12 +45,22 @@ export const Customers = (props) => {
         setSearchRadius(newRadius.current.value)
     }
 
+    const setTopLinkForUser = () => {
+        if(props.currentUserProfile === 3) {
+            return <Link to={{pathname:`/my_stack`}}>My Stack</Link>
+        } else if (props.currentUserProfile === 2) {
+            return <Link to={{pathname:`/myshop`}}>My Shop</Link>
+        } else if (props.currentUserProfile === 1) {
+            return <Link to={{pathname:`/admin`}}>Admin Panel</Link>
+        }
+    }
+
     if (singleCustomer === undefined) {
         return <Loading />
     } else {
         return ( 
             <div>
-            <Link to={{pathname:`/my_stack`}}>My Stack</Link>
+            {setTopLinkForUser()}
             <h1>Showing Record Shops Within</h1>
             <input min="50" max="300" onChange={searchRadiusHandler} ref={newRadius} defaultValue={searchRadius} type="number" step="50" ></input>
             <h1>miles of</h1>
@@ -56,7 +72,7 @@ export const Customers = (props) => {
             <input type="submit"></input>
             </form>
             }
-            <CustomerShopList searchRadius={searchRadius} />
+            <CustomerShopList key="customer_shop_list" currentUserProfile={props.currentUserProfile} searchRadius={searchRadius} />
             </div>
         )
         }

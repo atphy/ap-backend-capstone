@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from "react";
 import { StackContext } from './StackProvider'
 import { ShopRecord } from '../../Shops/ShopRecordList/ShopRecord'
 import { Link } from "react-router-dom"
+import { Redirect } from "react-router-dom"
+import { Loading } from '../../Loading/Loading'
 
 export const MyStack = (props) => {
 
@@ -11,17 +13,26 @@ export const MyStack = (props) => {
         getMyStackItems()
     }, [])
 
-    return (
-        <>
+
+if (!props.currentUserProfile) {
+    return <Loading />
+} else {
+    if (props.currentUserProfile !== 3) {
+        return <Redirect to="/" />
+    } else {
+        return (
+            <>
             <div className="my-stack-container" style={{ margin: "0 0", lineHeight: "1.75rem", }}> 
             <Link to={{pathname:`/`}}>Back to home</Link>
             <h1>Your Stack</h1>
             {stackItems.map(stackItem => {
                     return <div>
-                    <ShopRecord key={stackItem.record} profile_type={"customer"} shopRecord={stackItem.record} inStack={true} />
+                    <ShopRecord key={stackItem.record.id} currentUserProfile={props.currentUserProfile} shopRecord={stackItem.record} inStack={true} />
                     </div>
             })}
             </div>
         </>
     )
+        }
+    }
 };

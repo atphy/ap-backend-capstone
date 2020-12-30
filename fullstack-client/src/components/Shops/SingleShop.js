@@ -1,0 +1,30 @@
+import React, {useEffect, useContext} from "react";
+import { Link } from "react-router-dom"
+import { ShopContext } from './ShopProvider'
+import { ShopRecordList } from './ShopRecordList/ShopRecordList'
+import { Loading } from '../Loading/Loading'
+import { Redirect } from "react-router-dom"
+
+export const SingleShop = (props) => {
+
+    const { getSingleShop, singleShop } = useContext(ShopContext)
+
+    useEffect(() => {
+        const shopId = parseInt(props.match.params.shopId)
+        getSingleShop(shopId)
+    }, [])
+
+
+if (!singleShop.records) {
+    return <Loading />
+} 
+
+if (!singleShop.verified) {
+    return <Redirect to="/" />
+}
+    return <>
+    <Link to={{pathname:`/`}}>Back to home</Link>
+    <h1>{singleShop.username}</h1>
+    <ShopRecordList key={singleShop.id} currentUserProfile={props.currentUserProfile} currentShop={singleShop}/>
+    </>;
+};
