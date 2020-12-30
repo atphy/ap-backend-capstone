@@ -31,7 +31,7 @@ The idea came from several conversations with the owner of a (now-closed) record
 - [ ] Customers are able to create a stack once authed
 - [ ] Stack can be filtered by store or show all wishlisted items across stores
 - [ ] Customers can search for records across all stores to find any nearby matches
-- [ ] Customers are able to click on a “detail view” to display more information about records
+- [x] Customers are able to click on a “detail view” to display more information about records
 
 ### Features that are Stretch Goals:
 - Customers and stores are able to edit profile details
