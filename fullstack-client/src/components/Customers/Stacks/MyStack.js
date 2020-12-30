@@ -14,7 +14,7 @@ export const MyStack = (props) => {
     return (
         <>
             <div className="my-stack-container" style={{ margin: "0 0", lineHeight: "1.75rem", }}> 
-            <Link to={{pathname:`/home`}}>Back to list</Link>
+            <Link to={{pathname:`/`}}>Back to home</Link>
             <h1>Your Stack</h1>
             {stackItems.map(stackItem => {
                     return <div>
