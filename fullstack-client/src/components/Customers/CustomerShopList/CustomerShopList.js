@@ -1,8 +1,11 @@
 import React, {useContext, useEffect, useState} from "react";
 import { ShopContext } from '../../Shops/ShopProvider'
 import { ShopRecordList } from '../../Shops/ShopRecordList/ShopRecordList'
+import { useHistory } from "react-router-dom";
 
 export const CustomerShopList = (props) => {
+    const history = useHistory();
+
     const { getShops, shops } = useContext(ShopContext)
 
     useEffect(() => {
@@ -27,9 +30,11 @@ export const CustomerShopList = (props) => {
             {sortedShops.map(shop => {
                 if (shop.verified === true) {
                     return <div>
-                    <h1>{shop.username}</h1>
+                    <h1 onClick={() => {
+                    history.push(`/shops/${shop.id}`)}}>
+                    {shop.username}</h1>
                     <h2>{shop.customer_distance} miles away</h2>
-                    <ShopRecordList key={shop.id} profile_type={"customer"} currentShop={shop}/>
+                    <ShopRecordList key={shop.id} currentUserProfile={props.currentUserProfile} currentShop={shop}/>
                 </div>
                 }
             })}

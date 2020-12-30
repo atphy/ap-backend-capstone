@@ -7,7 +7,7 @@ export const ShopRecordList = (props) => {
     const {getMyStackItems, stackItems} = useContext(StackContext)
 
     useEffect(() => {
-        if (props.profile_type === "customer") {
+        if (props.currentUserProfile === 3) {
             getMyStackItems()
         }
     }, [])
@@ -23,7 +23,7 @@ export const ShopRecordList = (props) => {
         <>
             <div className="shop-record-list-container" style={{ margin: "0 0", lineHeight: "1.75rem", }}> 
             {props.currentShop.records.map(record => {
-                return <ShopRecord {...props} key={record.id} inStack={isInStack(record.id)} profile_type={props.profile_type} shopRecord={record} />
+                return <ShopRecord isMyShop={props.IsMyShop} {...props} key={record.id} inStack={isInStack(record.id)} currentUserProfile={props.currentUserProfile} shopRecord={record} />
             })}
             </div>
         </>

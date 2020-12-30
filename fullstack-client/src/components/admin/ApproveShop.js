@@ -1,6 +1,7 @@
 import React, {useContext, useEffect} from "react";
 import { ShopContext } from '../Shops/ShopProvider'
 import { Redirect } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { Loading } from '../Loading/Loading'
 
 export const ApproveShop = (props) => {
@@ -25,6 +26,7 @@ if (!props.currentUserProfile) {
         return (
             <>
             <main className="main-container" style={{ margin: "0 0", lineHeight: "1.75rem", }}> 
+            <Link to={{pathname:`/`}}>Back to home</Link>
             {shops.map(shop => {
                             return (
                             <div key={shop.id}>

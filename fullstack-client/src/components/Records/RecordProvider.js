@@ -1,8 +1,21 @@
-import React from "react"
+import React, { useState } from "react"
 
 export const RecordContext = React.createContext()
 
 export const RecordProvider = (props) => {
+
+    const [singleRecord, setSingleRecord] = useState({})
+
+    const getSingleRecord = (recordId) => {
+        return fetch(`http://localhost:8000/records/${recordId}`, {
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("fullstack_token")}`,
+                "Content-Type": "application/json"
+            }
+        })
+            .then(res => res.json())
+            .then(setSingleRecord)
+    }
 
 
     const deleteRecord = id => {
@@ -16,7 +29,7 @@ export const RecordProvider = (props) => {
 
     return (
         <RecordContext.Provider value={{
-            deleteRecord,
+            deleteRecord, getSingleRecord, singleRecord
         }}>
             {props.children}
         </RecordContext.Provider>
