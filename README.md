@@ -27,13 +27,13 @@ The idea came from several conversations with the owner of a (now-closed) record
 - [x] Stores are able to create a profile, to be sent to an approval queue
 - [ ] Stores are able to search for records on Discogs and, if a match is found, populate that info into an “add record to inventory” form (if no match, this form is blank)
 - [ ] Stores are able to edit records and remove them from their inventory
-- [ ] Customers are able to browse store inventories without auth
-- [ ] Customers are able to create a stack once authed
-- [ ] Stack can be filtered by store or show all wishlisted items across stores
-- [ ] Customers can search for records across all stores to find any nearby matches
+- [ ] Customers are able to add and remove records in a stack once authed
 - [x] Customers are able to click on a “detail view” to display more information about records
 
 ### Features that are Stretch Goals:
+- Customers are able to browse store inventories without auth
+- Stack can be filtered by store or show all wishlisted items across stores
+- Customers can search for records across all stores to find any nearby matches
 - Customers and stores are able to edit profile details
 - Stores are able to customize the look of their storefronts (upload images, change colors of text and backgrounds)
 - Stores can “pin” records to home page view carousel
