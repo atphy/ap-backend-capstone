@@ -72,7 +72,7 @@ export const Customers = (props) => {
             <input type="submit"></input>
             </form>
             }
-            <CustomerShopList key="customer_shop_list" currentUserProfile={props.currentUserProfile} searchRadius={searchRadius} />
+            <CustomerShopList key="customer_shop_list" currentUserProfile={props.currentUserProfile} searchRadius={searchRadius} singleCustomer={singleCustomer} />
             </div>
         )
         }

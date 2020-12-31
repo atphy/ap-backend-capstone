@@ -25,6 +25,7 @@ export const StackProvider = (props) => {
             },
             body: JSON.stringify(newStackItem)
         })
+        .then(getMyStackItems)
     }
 
     const removeStackItem = (stackId) => {

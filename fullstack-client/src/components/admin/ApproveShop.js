@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useContext, useEffect} from "react";
 import { ShopContext } from '../Shops/ShopProvider'
 import { Redirect } from "react-router-dom"

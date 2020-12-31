@@ -27,7 +27,7 @@ if (!props.currentUserProfile) {
             <h1>Your Stack</h1>
             {stackItems.map(stackItem => {
                     return <div>
-                    <ShopRecord key={stackItem.record.id} currentUserProfile={props.currentUserProfile} shopRecord={stackItem.record} inStack={true} />
+                    <ShopRecord stackItems={stackItems} key={stackItem.record.id} currentUserProfile={props.currentUserProfile} shopRecord={stackItem.record} />
                     </div>
             })}
             </div>
