@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect } from "react";
 import { ShopContext } from '../../Shops/ShopProvider'
 import { ShopRecordList } from '../../Shops/ShopRecordList/ShopRecordList'
 import { useHistory } from "react-router-dom";
@@ -19,7 +19,11 @@ export const CustomerShopList = (props) => {
         <>
             <div className="customer-shop-list-container" style={{ margin: "0 0", lineHeight: "1.75rem", }}> 
             <h3>Or</h3>
-            <select>
+            <select onChange={(e) => {
+                        if(e.target.value){
+                            history.push(`/shops/${e.target.value}`)}}
+                        }
+                        >
             <option value={null}>Select from all record shops</option>
             {shops.map(shop => {
                 if (shop.verified === true) {
@@ -34,7 +38,7 @@ export const CustomerShopList = (props) => {
                     history.push(`/shops/${shop.id}`)}}>
                     {shop.username}</h1>
                     <h2>{shop.customer_distance} miles away</h2>
-                    <ShopRecordList key={shop.id} currentUserProfile={props.currentUserProfile} currentShop={shop}/>
+                    <ShopRecordList singleCustomer={props.singleCustomer} key={shop.id} currentUserProfile={props.currentUserProfile} currentShop={shop}/>
                 </div>
                 }
             })}

@@ -1,21 +1,34 @@
-import React, {useContext} from "react";
+import React, {useContext, useState, useEffect} from "react";
 
 import {RecordContext} from '../Records/RecordProvider'
 import { StackContext } from '../Customers/Stacks/StackProvider'
 
-import { useHistory } from "react-router-dom";
-
-
 export const RecordActionButton = (props) => {
+    const [inStack, setInStack] = useState(false)
 
+    useEffect(() => {
+            const stackIds = props.stackItems.map(s => s.record.id)
+            if (props.shopRecord.id in stackIds) {
+                setInStack(true)
+        }
+    }, [props.stackItems])
 
     const {addStackItem, removeStackItem} = useContext(StackContext)
     const { deleteRecord } = useContext(RecordContext)
+
+    const newStackItem = {
+        "record_id": props.shopRecord.id,
+    }
 
     const handleRecordDelete = (e) => {
         e.preventDefault();
         deleteRecord(props.shopRecord.id)
             .then(props.getAuthedShop)
+    }
+
+    const handleStackAdd = (e) => {
+        e.preventDefault();
+        addStackItem(newStackItem)
     }
 
     const handleStackDelete = (e) => {
@@ -24,13 +37,13 @@ export const RecordActionButton = (props) => {
     }
 
     const isRecordInStack = () => {
-        if(props.inStack) {
+        if(inStack) {
             return (
                 <button>Remove from stack</button> 
             )
         } else {
             return (
-                <button>Add to stack</button> 
+                <button onClick={handleStackAdd}>Add to stack</button> 
             )
         }
     }

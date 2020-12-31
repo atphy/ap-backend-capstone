@@ -33,7 +33,7 @@ class Stacks(ViewSet):
     def create(self, request):
         """Handle POST operations"""
 
-        record = Record.objects.get(pk=request.data["record"])
+        record = Record.objects.get(pk=request.data["record_id"])
         profile = Profile.objects.get(user=request.auth.user)
         customer = Customer.objects.get(profile=profile)
 
