@@ -6,4 +6,6 @@ from .stack import Stacks
 from .profile import Profiles
 from .customer import Customers
 from .inventory import Inventory
-from .discogs import TestArtistSearch
+from .discogs import ArtistSearch
+from .masters import MasterSearch
+from .master_versions import MasterVersionSearch
