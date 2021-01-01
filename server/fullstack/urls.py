@@ -2,7 +2,7 @@ from django.conf.urls import include
 from django.urls import path
 from rest_framework import routers
 from fullstackapi.views import register_user, login_user
-from fullstackapi.views import Shops, Records, Stacks, Profiles, Customers, Inventory
+from fullstackapi.views import Shops, Records, Stacks, Profiles, Customers, Inventory, TestArtistSearch
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'shops', Shops, 'shop')
@@ -11,6 +11,7 @@ router.register(r'records', Records, 'record')
 router.register(r'profiles', Profiles, 'profile')
 router.register(r'customers', Customers, 'customer')
 router.register(r'inventory', Inventory, 'inventory')
+router.register(r'search_discogs_artist', TestArtistSearch, 'search_discogs_artist')
 
 urlpatterns = [
     path('', include(router.urls)),

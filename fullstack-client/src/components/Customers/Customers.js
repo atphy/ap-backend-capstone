@@ -1,6 +1,5 @@
 import React, {useEffect, useContext, useState, useRef} from "react";
 import { Loading } from "../Loading/Loading";
-import { ShopContext } from "../Shops/ShopProvider";
 import { CustomerContext } from './CustomerProvider'
 import { CustomerShopList } from './CustomerShopList/CustomerShopList'
 import { Link } from "react-router-dom"

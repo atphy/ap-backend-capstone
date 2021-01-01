@@ -1,10 +1,11 @@
-import React, {useEffect, useContext, useState} from "react";
+import React, {useEffect, useContext, useRef} from "react";
 import { Redirect } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { Loading } from "../Loading/Loading";
 import { ShopContext } from './ShopProvider'
 import { ShopRecordList } from "./ShopRecordList/ShopRecordList";
 import { ShopVerification } from './ShopVerification';
+import { AddRecordForm } from './ShopRecordList/AddRecordForm/AddShopRecordForm'
 
 export const MyShop = (props) => {
 
@@ -13,7 +14,8 @@ export const MyShop = (props) => {
     useEffect(()=>{
         getAuthedShop()
     }, [])
-    
+
+    const addRecordDialog = useRef(null)
 
     if (singleShop === undefined || !props.currentUserProfile) {
 
@@ -29,7 +31,11 @@ export const MyShop = (props) => {
             <div>
             <Link to={{pathname:`/`}}>Back to home</Link>
             <h1>{singleShop.username}</h1>
-            <button>Add Record</button>
+            <button onClick={() => {
+                            addRecordDialog.current.showModal()}}>Add Record</button>
+            <dialog className="dialog dialog--addRecord" ref={addRecordDialog}>
+                <AddRecordForm modalComponent={"modalMain"}/>    
+            </dialog>
             <ShopRecordList isMyShop={true} getAuthedShop={getAuthedShop} currentUserProfile={props.currentUserProfile} currentShop={singleShop}/>
             </div>
             :<ShopVerification currentShop={singleShop}/> }</div>

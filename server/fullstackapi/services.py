@@ -1,4 +1,5 @@
 import fullstackapi.discogs_auth
+import requests
 
 # Defines calls a Shop will use in adding records to their Inventory
 # Flows as follows: Shop searches for an artist -> Shop selects an artist -> artist's master releases are returned -> 
@@ -11,11 +12,10 @@ import fullstackapi.discogs_auth
 def search_artist(artist_query):
     url = 'https://api.discogs.com/database/search' 
     params = {'q': artist_query, 'type': 'artist'}
-    headers = {'Authorization': discogs_auth}
+    headers = {'Authorization': 'oauth_token=""'}
     r = requests.get(url, params=params)
     artists = r.json()
-    artists_list = {'artists':artists['results']}
-    return artists_list
+    return artists
 
 # Shop clicks an artist returned in search_artist, the artist ID is passed into an API call to return a list 
 # of all master releases for that specific artist

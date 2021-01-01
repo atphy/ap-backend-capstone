@@ -1,7 +1,9 @@
-import React, {useContext, useState, useEffect} from "react";
+import React, {useContext, useState, useEffect, useRef} from "react";
 
 import {RecordContext} from '../Records/RecordProvider'
 import { StackContext } from '../Customers/Stacks/StackProvider'
+
+import { AddRecordForm } from "../Shops/ShopRecordList/AddRecordForm/AddShopRecordForm"
 
 export const RecordActionButton = (props) => {
     const [inStack, setInStack] = useState(false)
@@ -12,6 +14,8 @@ export const RecordActionButton = (props) => {
                 setInStack(true)
         }
     }, [props.stackItems])
+
+    const addRecordDialog = useRef(null)
 
     const {addStackItem, removeStackItem} = useContext(StackContext)
     const { deleteRecord } = useContext(RecordContext)
@@ -39,7 +43,7 @@ export const RecordActionButton = (props) => {
     const isRecordInStack = () => {
         if(inStack) {
             return (
-                <button>Remove from stack</button> 
+                <button onClick={handleStackDelete}>Remove from stack</button> 
             )
         } else {
             return (
@@ -53,7 +57,14 @@ export const RecordActionButton = (props) => {
             return null
         } else if (props.currentUserProfile === 2) {
             if(props.isMyShop) {
-                return <button onClick={handleRecordDelete}>X</button>
+                return <> 
+                <button onClick={handleRecordDelete}>X</button>
+                <button onClick={() => {
+                        addRecordDialog.current.showModal()}}>Edit</button>
+                <dialog className="dialog dialog--addRecord" ref={addRecordDialog}>
+                    <AddRecordForm modalComponent={"finalForm"}/>    
+                </dialog>
+                </>
             } else {
                 return null
             }

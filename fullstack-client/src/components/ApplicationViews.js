@@ -11,6 +11,7 @@ import { MyStack } from './Customers/Stacks/MyStack'
 import { StackProvider } from './Customers/Stacks/StackProvider'
 import { RecordDetail } from './Records/RecordDetail'
 import { SingleShop } from './Shops/SingleShop'
+import { DiscogsProvider } from './discogs/DiscogsProvider'
 
 export const ApplicationViews = (props) => {
 
@@ -25,6 +26,7 @@ export const ApplicationViews = (props) => {
         <Route path="/" render={(props) => {
             return (
             <>
+            <DiscogsProvider>
             <StackProvider>
             <RecordProvider>
             <ShopProvider>
@@ -45,6 +47,7 @@ export const ApplicationViews = (props) => {
             </ShopProvider>
             </RecordProvider>
             </StackProvider>
+            </DiscogsProvider>
             </>
             )
 
