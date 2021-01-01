@@ -1,21 +1,22 @@
-from fullstackapi.services import search_artist
 from rest_framework.viewsets import ViewSet
 from rest_framework import serializers
 from rest_framework.response import Response
-from fullstackapi.models import Artist
+from fullstackapi.models import Master
 import discogs_client
 from discogs_client import models
+import sys
 
-class ArtistSearch(ViewSet):
+class MasterSearch(ViewSet):
     def list(self, request):
         d = discogs_client.Client('Fullstack/0.1 +@:atphy42@gmail.com', user_token="EMIDOqyOnyXKSDQGfzjhruBlRDBvBVaZnIDcaTOd")
-        results = d.search(request.data["artist"], type='artist')
+        artist_id = request.data["artist_id"]
+        results = d.artist(artist_id).releases
         
-        serializer = ArtistSearchSerializer(
+        serializer = MasterSearchSerializer(
             results, many=True, context={'request': request})
         return Response(serializer.data)
 
-class ArtistSearchSerializer(serializers.ModelSerializer):
+class MasterSearchSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Artist
-        fields = ("__all__")
+        model = Master
+        fields = ("id", "title")
