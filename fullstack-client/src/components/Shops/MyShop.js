@@ -6,6 +6,9 @@ import { ShopContext } from './ShopProvider'
 import { ShopRecordList } from "./ShopRecordList/ShopRecordList";
 import { ShopVerification } from './ShopVerification';
 import { AddRecordForm } from './ShopRecordList/AddRecordForm/AddShopRecordForm'
+import "./MyShop.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStepBackward } from '@fortawesome/free-solid-svg-icons'
 
 export const MyShop = (props) => {
 
@@ -29,7 +32,7 @@ export const MyShop = (props) => {
         return (
             <div>{singleShop.verified ? 
             <div>
-            <Link to={{pathname:`/`}}>Back to home</Link>
+            <Link to={{pathname:`/`}}><FontAwesomeIcon icon={faStepBackward} /></Link>
             <h1>{singleShop.username}</h1>
             <button onClick={() => {
                             addRecordDialog.current.showModal()}}>Add Record</button>

@@ -6,15 +6,15 @@ export const DiscogsContext = React.createContext()
 export const DiscogsProvider = (props) => {
 
     const [artistSearchList, setArtistSearchList] = useState([])
-    const [artistMastersList, setMastersSearchList] = useState([])
+    const [artistMastersList, setMastersSearchList] = useState(null)
+    const [masterVersionsList, setVersionsSearchList] = useState(null)
 
     const getArtistSearch = (artistName) => {
-        return fetch(`https://api.discogs.com/database/search?q=${artistName}&type=artist&token=${discogsKeys.Authorization.oauth_token}`, {
+        return fetch(`http://localhost:8000/search_discogs_artist?artist=${artistName}`, {
             method: "GET",
             headers: {
-                "Authorization": discogsKeys.Authorization,
-                "Content-Type": discogsKeys['Content-Type'],
-                "User-Agent": discogsKeys['User-Agent']
+                "Authorization": `Token ${localStorage.getItem("fullstack_token")}`,
+                "Content-Type": "application/json"
             }
         })
             .then(res => res.json())
@@ -22,21 +22,32 @@ export const DiscogsProvider = (props) => {
     }
 
     const findArtistMasters = (artistId) => {
-        return fetch(`https://api.discogs.com/artists/7578/releases?oauth_consumer_key=TutvVcSOAjUtnpHSAcNC&oauth_token=nVWipcCtGzmGFRYqzqKUNtZIKTXKLqlkzMjYvKcF&oauth_signature_method=PLAINTEXT&oauth_timestamp=1609452591&oauth_nonce=yb93oGtArTd&oauth_version=1.0&oauth_signature=lsKNoWjTcGBFlWDiDgkTrKAtDXeYaBYH%26uMZnqMInGFSCxgTfkyjjqpwsVLlinkwsXMWOQMnY`, {
+        return fetch(`http://localhost:8000/search_discogs_masters?artistId=${artistId}`, {
             method: "GET",
             headers: {
-                "Authorization": discogsKeys.Authorization,
-                "Content-Type": discogsKeys['Content-Type'],
-                "User-Agent": discogsKeys['User-Agent']
+                "Authorization": `Token ${localStorage.getItem("fullstack_token")}`,
+                "Content-Type": "application/json"
             }
         })
             .then(res => res.json())
                 .then(setMastersSearchList)
     }
 
+    const findMasterVersions = (artist, master) => {
+        return fetch(`http://localhost:8000/search_discogs_versions?artist=${artist}&master=${master}`, {
+            method: "GET",
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("fullstack_token")}`,
+                "Content-Type": "application/json"
+            }
+        })
+            .then(res => res.json())
+                .then(setVersionsSearchList)
+    }
+
     return (
         <DiscogsContext.Provider value={{
-            artistSearchList, getArtistSearch, findArtistMasters, artistMastersList
+            artistSearchList, getArtistSearch, findArtistMasters, artistMastersList, masterVersionsList, findMasterVersions
         }}>
             {props.children}
         </DiscogsContext.Provider>

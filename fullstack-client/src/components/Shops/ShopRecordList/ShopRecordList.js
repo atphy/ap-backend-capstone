@@ -14,7 +14,7 @@ export const ShopRecordList = (props) => {
 
     return (
         <>
-            <div className="shop-record-list-container" style={{ margin: "0 0", lineHeight: "1.75rem", }}> 
+            <div className={props.conditionalListClass} style={{ margin: "0 0", lineHeight: "1.75rem", }}> 
             {props.currentShop.records.map(record => {
                 return <ShopRecord isMyShop={props.IsMyShop} stackItems={stackItems} {...props} key={record.id} currentUserProfile={props.currentUserProfile} shopRecord={record} />
             })}

@@ -6,3 +6,5 @@ from .stack import Stack
 from .discogs_artist import Artist
 from .discogs_master import Master
 from .master_versions import MasterVersion
+from .release_info import ReleaseInfo
+from .labels import Labels

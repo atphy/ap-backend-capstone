@@ -4,12 +4,18 @@ import { DiscogsContext } from "../../../discogs/DiscogsProvider"
 export const DiscogsArtistSearch = (props) => {
 
     const {artistSearchList, getArtistSearch} = useContext(DiscogsContext)
+    const [artistList, setArtistList] = useState(null)
     const artistName = useRef(null)
 
     const handleArtistSearch = (e) => {
         e.preventDefault();
         getArtistSearch(artistName.current.value)
+        props.setSearchArtist(artistName.current.value)
     }
+
+    useEffect(() => {
+        setArtistList(artistSearchList)
+    }, [artistSearchList])
 
     return (
         <>
@@ -18,12 +24,13 @@ export const DiscogsArtistSearch = (props) => {
             <input ref={artistName} name="artistName" placeholder="Pavement" type="text"></input>
             <input type="submit"></input>
         </form>
-        {artistSearchList.results ? 
-                artistSearchList.results.map(artist => {
-                    return <h1 onClick={() => 
-                        {props.componentChangeHandler("masterSelect") 
-                        props.setSearchArtistId(artist.id)}}
-                        key={artist.id}>{artist.title}</h1>
+        {artistList ? 
+                artistList.map(artist => {
+                    return <h2 onClick={() => 
+                        {
+                        props.findArtistMasters(artist.id)    
+                        props.componentChangeHandler("masterSelect") 
+                        }} key={artist.id}>{artist.name}</h2>
                 })
             : 
             null}

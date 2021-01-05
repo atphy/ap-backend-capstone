@@ -130,7 +130,7 @@ class Records(ViewSet):
 class RecordListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Record
-        fields = ('id', 'shop_id', 'name', 'artist', 'price', 'image_url', 'date_added')
+        fields = ('id', 'shop_id', 'name', 'artist', 'label', 'catalogue_number', 'country', 'year', 'media_condition', 'sleeve_condition', 'price', 'image_url', 'notes', 'date_added')
 
 """Serializer for single record detail view"""
 class RecordDetailSerializer(serializers.ModelSerializer):

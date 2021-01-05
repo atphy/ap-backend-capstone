@@ -17,6 +17,27 @@ export const RecordProvider = (props) => {
             .then(setSingleRecord)
     }
 
+    const addRecord = record => {
+        return fetch("http://localhost:8000/records", {
+            method: "POST",
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("fullstack_token")}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(record)
+        })
+    }
+
+    const updateRecord = (record_id, record) => {
+        return fetch(`http://localhost:8000/records/${record_id}`, {
+            method: "PUT",
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("fullstack_token")}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(record)
+        })
+    }
 
     const deleteRecord = id => {
         return fetch(`http://localhost:8000/records/${id}`, {
@@ -29,7 +50,7 @@ export const RecordProvider = (props) => {
 
     return (
         <RecordContext.Provider value={{
-            deleteRecord, getSingleRecord, singleRecord
+            deleteRecord, getSingleRecord, singleRecord, addRecord, updateRecord
         }}>
             {props.children}
         </RecordContext.Provider>

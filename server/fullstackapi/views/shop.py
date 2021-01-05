@@ -65,7 +65,7 @@ class Shops(ViewSet):
         authed_shop = Shop.objects.get(profile=request.auth.user.id)
         records = Record.objects.filter(shop_id=authed_shop)
 
-        records = RecordSerializer(
+        records = RecordDetailSerializer(
             records, many=True, context={'request': request})
         authed_shop = ShopSerializer(
             authed_shop, many=False, context={'request': request})
@@ -85,7 +85,7 @@ class RecordSerializer(serializers.HyperlinkedModelSerializer):
 class RecordDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Record
-        fields = ('id', 'shop_id', 'name', 'artist', 'label', 'catalogue_number', 'country', 'year', 'media_condition', 'sleeve_condition', 'price', 'image_url', 'notes')
+        fields = ('id', 'discogs_id', 'shop_id', 'name', 'artist', 'label', 'catalogue_number', 'country', 'year', 'media_condition', 'sleeve_condition', 'price', 'image_url', 'notes')
 
 class ShopRecordsSerializer(serializers.ModelSerializer):
 

@@ -9,3 +9,4 @@ from .inventory import Inventory
 from .discogs import ArtistSearch
 from .masters import MasterSearch
 from .master_versions import MasterVersionSearch
+from .release_info import ReleaseInfoSearch

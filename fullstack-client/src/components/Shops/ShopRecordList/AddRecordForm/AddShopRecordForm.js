@@ -1,21 +1,21 @@
 import React, {useState, useContext} from "react"
-import { FinalForm } from './FinalForm'
+import { RecordForm } from './RecordForm'
 import { DiscogsArtistSearch } from './DiscogsArtistSearch'
 import { MasterSelectForm } from './MasterSelectForm'
 import { DiscogsContext } from "../../../discogs/DiscogsProvider"
+import { VersionSelectForm } from "./VersionSelectForm"
+import { EditRecordForm } from "./EditRecordForm"
 
 export const AddRecordForm = (props) => {
     const [selectedComponent, setSelectedComponent] = useState(props.modalComponent)
-    const [searchArtistId, setSearchArtistId] = useState(null)
+    const [searchArtist, setSearchArtist] = useState(null)
+    const [searchMaster, setSearchMaster] = useState(null)
 
-    const {artistMastersList, findArtistMasters} = useContext(DiscogsContext)
+    const {artistMastersList, findArtistMasters, masterVersionsList, findMasterVersions} = useContext(DiscogsContext)
+    const [infoForForm, setInfoForForm] = useState(null)
 
     const componentChangeHandler = (newComponent) => {
         setSelectedComponent(newComponent)
-    }
-
-    const findMastersById = (searchArtistId) => {
-        findArtistMasters(searchArtistId)
     }
 
     if (selectedComponent === "modalMain") {
@@ -24,26 +24,37 @@ export const AddRecordForm = (props) => {
         <>
         <h1 onClick={() => {componentChangeHandler("discogsArtistSearch")}}>Add a Record from Discogs</h1>
         <h3>or</h3>
-        <h1 onClick={() => {componentChangeHandler("finalForm")}}>Provide Your Own Record Info</h1>
+        <h1 onClick={() => {componentChangeHandler("recordForm")}}>Provide Your Own Record Info</h1>
         </>
         )
-    } else if (selectedComponent === "finalForm") {
+    } else if (selectedComponent === "recordForm") {
     return (
             <>
-            <FinalForm />
+            <RecordForm searchMaster={searchMaster} searchArtist={searchArtist} infoForForm={infoForForm} />
             </>
             )
-    } else if (selectedComponent === "discogsArtistSearch") {
+    } else if (selectedComponent === "editRecord") {
+        return (
+                <>
+                <EditRecordForm shopRecord={props.shopRecord} />
+                </>
+                )
+        } else if (selectedComponent === "discogsArtistSearch") {
         return (
             <>
-            <DiscogsArtistSearch setSearchArtistId={setSearchArtistId} componentChangeHandler={componentChangeHandler} />
+            <DiscogsArtistSearch setSearchArtist={setSearchArtist} findArtistMasters={findArtistMasters} componentChangeHandler={componentChangeHandler} />
             </>
             )
     } else if (selectedComponent === "masterSelect") {
-        {findMastersById(searchArtistId)}
         return (
             <>
-            <MasterSelectForm artistMastersList={artistMastersList.releases} componentChangeHandler={componentChangeHandler} />
+            <MasterSelectForm setSearchMaster={setSearchMaster} searchArtist={searchArtist} findMasterVersions={findMasterVersions} artistMastersList={artistMastersList} componentChangeHandler={componentChangeHandler} />
+            </>
+            )
+    } else if (selectedComponent === "versionSelect") {
+        return (
+            <>
+            <VersionSelectForm setInfoForForm={setInfoForForm} masterVersionsList={masterVersionsList} componentChangeHandler={componentChangeHandler} />
             </>
             )
         } 

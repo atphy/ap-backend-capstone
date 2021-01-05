@@ -1,0 +1,16 @@
+.container--login {
+    margin: 20vh auto;
+    width: 40vw;
+    text-align: center;
+}
+
+.container--register {
+    margin: 0 auto;
+    width: 40vw;
+    text-align: center;
+}
+
+.login-header {
+    font-size: 150px;
+    margin-bottom: 50px;
+}

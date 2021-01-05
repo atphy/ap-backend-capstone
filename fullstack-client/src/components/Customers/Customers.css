@@ -1,0 +1,39 @@
+.customer-top-info {
+    display: flex;
+    background-color: #DD9866;
+    overflow: hidden;
+
+}
+
+.list-option-display {
+    color: #5C6E91;
+}
+
+.zip-input {
+    background-color: rgba(0,0,0,0);
+    border: none;
+    font-family: 'Lora', serif;
+    font-size: 30px;
+    color: blue;
+    width: 20px;
+}
+
+.main-shop-list {
+    text-align: center;
+}
+
+.shop-record-list-container {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+}
+
+.shop-record-container {
+    padding: 5px;
+    min-width: 250px;
+    width: 200px;
+    min-height: 250px;
+    max-height: 500px;
+    float: left;
+}

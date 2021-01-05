@@ -18,7 +18,8 @@ export const CustomerShopList = (props) => {
     return (
         <>
             <div className="customer-shop-list-container" style={{ margin: "0 0", lineHeight: "1.75rem", }}> 
-            <h3>Or</h3>
+            <div className="customer-top-info">
+            <h3>Or&nbsp;&nbsp;</h3>
             <select onChange={(e) => {
                         if(e.target.value){
                             history.push(`/shops/${e.target.value}`)}}
@@ -31,17 +32,20 @@ export const CustomerShopList = (props) => {
                 }
             })}
             </select>
+            </div>
+            <div className="main-shop-list">
             {sortedShops.map(shop => {
                 if (shop.verified === true) {
-                    return <div>
+                    return <div key={shop.id}>
                     <h1 onClick={() => {
                     history.push(`/shops/${shop.id}`)}}>
                     {shop.username}</h1>
-                    <h2>{shop.customer_distance} miles away</h2>
-                    <ShopRecordList singleCustomer={props.singleCustomer} key={shop.id} currentUserProfile={props.currentUserProfile} currentShop={shop}/>
+                    <p>{shop.customer_distance} miles away</p>
+                    <ShopRecordList conditionalListClass="d-flex flex-row flex-nowrap container-fluid py-2 shop-record-list-container" conditionalItemClass="shop-record-container" singleCustomer={props.singleCustomer} key={shop.id} currentUserProfile={props.currentUserProfile} currentShop={shop}/>
                 </div>
                 }
             })}
+            </div>
             </div>
         </>
     )

@@ -2,6 +2,7 @@ import React, { useRef, useContext } from "react"
 import { Link } from "react-router-dom"
 import { UserContext } from '../users/UserProvider'
 import "./Auth.css"
+import { Button, Form, FormGroup } from 'reactstrap';
 
 export const Login = (props) => {
     const username = useRef(null)
@@ -46,20 +47,21 @@ export const Login = (props) => {
                 <button className="button--close" onClick={e => invalidDialog.current.close()}>Close</button>
             </dialog>
             <section>
-                <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Fullstack</h1>
-                    <fieldset>
+                <Form className="form--login" onSubmit={handleLogin}>
+                    <h1 className="login-header">Sign In</h1>
+                    <FormGroup>
                         <input
                             ref={username}
                             type="text"
+                            name="username"
                             id="username"
                             className="form-control"
                             defaultValue="admin"
                             placeholder="Username"
                             required
                             autoFocus />
-                    </fieldset>
-                    <fieldset>
+                    </FormGroup>
+                    <FormGroup>
                         <input ref={password}
                             type="password"
                             id="password"
@@ -67,13 +69,13 @@ export const Login = (props) => {
                             defaultValue="me"
                             placeholder="Password"
                             required />
-                    </fieldset>
-                    <fieldset style={{
+                    </FormGroup>
+                    <FormGroup style={{
                         textAlign:"center"
                     }}>
-                        <button className="btn login-button" type="submit">Login</button>
-                    </fieldset>
-                </form>
+                        <Button className="btn login-button" type="submit">Log in</Button>
+                    </FormGroup>
+                </Form>
             </section>
             <section className="link--register">
                 <Link to="/register">Or sign up!</Link>

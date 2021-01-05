@@ -59,10 +59,10 @@ export const RecordActionButton = (props) => {
             if(props.isMyShop) {
                 return <> 
                 <button onClick={handleRecordDelete}>X</button>
-                <button onClick={() => {
+                <button onClick={(e) => {
                         addRecordDialog.current.showModal()}}>Edit</button>
                 <dialog className="dialog dialog--addRecord" ref={addRecordDialog}>
-                    <AddRecordForm modalComponent={"finalForm"}/>    
+                    <AddRecordForm shopRecord={props.shopRecord} modalComponent={"editRecord"}/>    
                 </dialog>
                 </>
             } else {
