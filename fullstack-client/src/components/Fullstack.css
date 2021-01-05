@@ -54,3 +54,10 @@ p {
     border: solid black 1px;
 }
 
+.logout-button {
+    position: absolute;
+    background-color: rgba(0,0,0,0) !important;
+    border: none !important;
+    color: black !important;
+}
+

@@ -18,7 +18,7 @@ export const DiscogsArtistSearch = (props) => {
     }, [artistSearchList])
 
     return (
-        <>
+        <div className="record-form-container">
         <h1>Search for artist by name</h1>
         <form onSubmit={handleArtistSearch}>
             <input ref={artistName} name="artistName" placeholder="Pavement" type="text"></input>
@@ -34,6 +34,6 @@ export const DiscogsArtistSearch = (props) => {
                 })
             : 
             null}
-        </>
+        </div>
     )
 }

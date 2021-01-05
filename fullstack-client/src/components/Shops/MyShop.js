@@ -8,7 +8,8 @@ import { ShopVerification } from './ShopVerification';
 import { AddRecordForm } from './ShopRecordList/AddRecordForm/AddShopRecordForm'
 import "./MyShop.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStepBackward } from '@fortawesome/free-solid-svg-icons'
+import { faStepBackward, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import { Button } from 'reactstrap';
 
 export const MyShop = (props) => {
 
@@ -37,6 +38,7 @@ export const MyShop = (props) => {
             <button onClick={() => {
                             addRecordDialog.current.showModal()}}>Add Record</button>
             <dialog className="dialog dialog--addRecord" ref={addRecordDialog}>
+            <Button onClick={e => {addRecordDialog.current.close()}}><FontAwesomeIcon icon={faTimesCircle} /></Button>
                 <AddRecordForm modalComponent={"modalMain"}/>    
             </dialog>
             <ShopRecordList isMyShop={true} getAuthedShop={getAuthedShop} currentUserProfile={props.currentUserProfile} currentShop={singleShop}/>

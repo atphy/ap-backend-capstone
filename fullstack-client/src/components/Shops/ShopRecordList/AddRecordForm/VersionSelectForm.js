@@ -9,7 +9,7 @@ export const VersionSelectForm = (props) => {
     } else {
     const vinylReleases = props.masterVersionsList.filter(r => r.formats[0].name === "Vinyl")
     return (
-        <>
+        <div className="record-form-container">
         <h1>Select release version</h1>
         {props.masterVersionsList ? 
                 vinylReleases.map(version => {
@@ -28,6 +28,6 @@ export const VersionSelectForm = (props) => {
                 })
             : 
             null}
-        </>
+        </div>
     )}
 }

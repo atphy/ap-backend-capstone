@@ -5,6 +5,7 @@ import { MasterSelectForm } from './MasterSelectForm'
 import { DiscogsContext } from "../../../discogs/DiscogsProvider"
 import { VersionSelectForm } from "./VersionSelectForm"
 import { EditRecordForm } from "./EditRecordForm"
+import "./AddShopRecordForm.css"
 
 export const AddRecordForm = (props) => {
     const [selectedComponent, setSelectedComponent] = useState(props.modalComponent)
@@ -21,11 +22,14 @@ export const AddRecordForm = (props) => {
     if (selectedComponent === "modalMain") {
 
     return (
-        <>
+        <div className="record-form-container">
         <h1 onClick={() => {componentChangeHandler("discogsArtistSearch")}}>Add a Record from Discogs</h1>
         <h3>or</h3>
-        <h1 onClick={() => {componentChangeHandler("recordForm")}}>Provide Your Own Record Info</h1>
-        </>
+        <h1 onClick={() => {
+            componentChangeHandler("recordForm");
+            setInfoForForm({"id": 0})
+            }}>Provide Your Own Record Info</h1>
+        </div>
         )
     } else if (selectedComponent === "recordForm") {
     return (

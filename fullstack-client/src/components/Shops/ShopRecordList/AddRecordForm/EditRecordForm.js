@@ -41,9 +41,8 @@ export const EditRecordForm = (props) => {
     if(!props.shopRecord) {
             return <Loading />
     }
-    {console.warn(props.shopRecord)}
     return (
-        <>
+        <div className="record-form-container">
         <h1>Enter Record Information</h1>
         <form >
             <label for="name">Record name: </label>
@@ -58,8 +57,7 @@ export const EditRecordForm = (props) => {
             <input type="text" ref={year} name="year" defaultValue={props.shopRecord.year} />
             <label for="year">Release country: </label>
             <input type="text" ref={country} name="country" defaultValue={props.shopRecord.country} />
-            <select ref={media_condition}>
-                <option selected disabled hidden>{props.shopRecord.media_condition}</option>
+            <select ref={media_condition} defaultValue={props.shopRecord.media_condition}>
                 <option value="M">Mint</option>
                 <option value="NM">Near Mint</option>
                 <option value="VG">Very Good</option>
@@ -67,8 +65,7 @@ export const EditRecordForm = (props) => {
                 <option value="F">Fair</option>
                 <option value="P">Poor</option>
             </select>
-            <select ref={sleeve_condition}>
-                <option selected disabled hidden>{props.shopRecord.sleeve_condition}</option>
+            <select ref={sleeve_condition} defaultValue={props.shopRecord.sleeve_condition}>
                 <option value="M">Mint</option>
                 <option value="NM">Near Mint</option>
                 <option value="VG">Very Good</option>
@@ -82,6 +79,6 @@ export const EditRecordForm = (props) => {
             <input ref={notes} type="textarea" defaultValue={props.shopRecord.notes} rows="10" name="notes" />
             <input type="submit" onClick={constructNewRecord}/>
         </form>
-        </>
+        </div>
     )
 }

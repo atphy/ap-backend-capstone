@@ -1,19 +1,15 @@
-import React, {useContext, useState, useEffect, useRef} from "react";
+import React, {useContext, useRef} from "react";
 
 import {RecordContext} from '../Records/RecordProvider'
 import { StackContext } from '../Customers/Stacks/StackProvider'
 
 import { AddRecordForm } from "../Shops/ShopRecordList/AddRecordForm/AddShopRecordForm"
 
-export const RecordActionButton = (props) => {
-    const [inStack, setInStack] = useState(false)
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import { Button } from 'reactstrap';
 
-    useEffect(() => {
-            const stackIds = props.stackItems.map(s => s.record.id)
-            if (props.shopRecord.id in stackIds) {
-                setInStack(true)
-        }
-    }, [props.stackItems])
+export const RecordActionButton = (props) => {
 
     const addRecordDialog = useRef(null)
 
@@ -37,11 +33,11 @@ export const RecordActionButton = (props) => {
 
     const handleStackDelete = (e) => {
         e.preventDefault();
-        removeStackItem()
+        removeStackItem(props.shopRecord.id)
     }
 
     const isRecordInStack = () => {
-        if(inStack) {
+        if(props.inStack) {
             return (
                 <button onClick={handleStackDelete}>Remove from stack</button> 
             )
@@ -62,6 +58,7 @@ export const RecordActionButton = (props) => {
                 <button onClick={(e) => {
                         addRecordDialog.current.showModal()}}>Edit</button>
                 <dialog className="dialog dialog--addRecord" ref={addRecordDialog}>
+                <Button onClick={e => {addRecordDialog.current.close()}}><FontAwesomeIcon icon={faTimesCircle} /></Button>
                     <AddRecordForm shopRecord={props.shopRecord} modalComponent={"editRecord"}/>    
                 </dialog>
                 </>

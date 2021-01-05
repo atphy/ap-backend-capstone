@@ -42,7 +42,7 @@ export const RecordForm = (props) => {
             return <Loading />
     }
     return (
-        <>
+        <div className="record-form-container">
         <h1>Enter Record Information</h1>
         <form >
             <label for="name">Record name: </label>
@@ -81,6 +81,6 @@ export const RecordForm = (props) => {
             <input ref={notes} type="textarea" defaultValue={props.infoForForm.notes} rows="10" name="notes" />
             <input type="submit" onClick={constructNewRecord}/>
         </form>
-        </>
+        </div>
     )
 }

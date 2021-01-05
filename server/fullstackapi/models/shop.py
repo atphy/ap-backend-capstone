@@ -43,7 +43,7 @@ class Shop(models.Model):
         location_zip = zcdb[self.zip_code]
         location = [location_zip.latitude, location_zip.longitude]
         return location
-    
+
     @property
     def customer_distance(self):
         zcdb = ZipCodeDatabase()
