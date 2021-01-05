@@ -55,8 +55,16 @@ class Stacks(ViewSet):
             Response -- 200, 404, or 500 status code
         """
         try:
-            stack = Stack.objects.get(pk=pk)
-            stack.delete()
+            stacks = Stack.objects.all()
+
+            record = Record.objects.get(pk=pk)
+            
+            profile = Profile.objects.get(user=request.auth.user)
+            customer = Customer.objects.get(profile=profile)
+
+            stack = stacks.filter(customer_id=customer)
+            stackItem = stack.filter(record=record)
+            stackItem.delete()
 
             return Response({}, status=status.HTTP_204_NO_CONTENT)
 

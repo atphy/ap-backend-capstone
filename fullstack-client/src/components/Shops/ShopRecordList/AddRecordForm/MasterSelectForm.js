@@ -7,7 +7,7 @@ export const MasterSelectForm = (props) => {
         return <Loading />
     }
     return (
-        <>
+        <div className="record-form-container">
         <h1>Select record</h1>
         {props.artistMastersList ? 
                 props.artistMastersList.map(master => {
@@ -22,6 +22,6 @@ export const MasterSelectForm = (props) => {
                 })
             : 
             null}
-        </>
+        </div>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { RecordActionButton } from '../../Records/RecordActionButton'
 
 import { useHistory } from "react-router-dom";
@@ -6,7 +6,16 @@ import { useHistory } from "react-router-dom";
 
 export const ShopRecord = (props) => {
 
-    const [inStack] = useState(false)
+    const [inStack, setInStack] = useState(false)
+
+    useEffect(() => {
+        const stackIds = props.stackItems.map(s => s.record.id)
+        if(stackIds.indexOf(props.shopRecord.id) >= 0) {
+            setInStack(true)
+    } else {
+        setInStack(false)
+    }
+    }, [props.stackItems])
 
     const history = useHistory();
 

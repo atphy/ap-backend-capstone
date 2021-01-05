@@ -1,0 +1,13 @@
+.dialog--addRecord {
+    position: absolute;
+    border: none;
+    margin: 2vh;
+    top: 10vh;   
+    padding: 20px;
+    height: 70vh;
+    border: solid white 4px;
+    border-radius: 20px;
+    justify-content: center;
+    overflow-x: auto;
+    box-shadow: -0.2vh 0.2vw 2px 2px;
+}
