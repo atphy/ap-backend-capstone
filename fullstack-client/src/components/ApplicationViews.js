@@ -26,6 +26,7 @@ export const ApplicationViews = (props) => {
         <Route path="/" render={(props) => {
             return (
             <>
+            <div>
             <DiscogsProvider>
             <StackProvider>
             <RecordProvider>
@@ -48,6 +49,7 @@ export const ApplicationViews = (props) => {
             </RecordProvider>
             </StackProvider>
             </DiscogsProvider>
+            </div>
             </>
             )
 

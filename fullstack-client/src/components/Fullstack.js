@@ -8,7 +8,8 @@ import { UserProvider } from "./users/UserProvider"
 import { ShopProvider } from './Shops/ShopProvider'
 
 export const Fullstack = () => (
-    <>
+    <div className="main-container">
+        <div className="secondary-container">
         <Route path="/" render={() => {
             if (localStorage.getItem("fullstack_token")) {
 
@@ -62,5 +63,6 @@ export const Fullstack = () => (
                 </>
                 )
         }} />
-    </>
+        </div>
+    </div>
 )

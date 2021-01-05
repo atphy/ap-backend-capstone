@@ -9,8 +9,8 @@ import sys
 class MasterSearch(ViewSet):
     def list(self, request):
         d = discogs_client.Client('Fullstack/0.1 +@:atphy42@gmail.com', user_token="EMIDOqyOnyXKSDQGfzjhruBlRDBvBVaZnIDcaTOd")
-        artist_id = request.data["artist_id"]
-        results = d.artist(artist_id).releases
+        artist_id = self.request.query_params.get("artistId", None)
+        results = d.artist(artist_id).releases.page(1)
         
         serializer = MasterSearchSerializer(
             results, many=True, context={'request': request})
@@ -19,4 +19,4 @@ class MasterSearch(ViewSet):
 class MasterSearchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Master
-        fields = ("id", "title")
+        fields = ("__all__")

@@ -14,7 +14,7 @@
             "media_condition": "VG+",
             "sleeve_condition": "G",
             "price": "40.99",
-            "image_url": "",
+            "image_url": "http://localhost:8000/media/placeholders/willie-ccr.png",
             "notes": "Small crease in upper right corner, disc is clean and without scratches",
             "date_added": "2020-04-20T12:35:37+00:00"
         }
@@ -384,7 +384,47 @@
         "pk": 20,
         "fields": {
             "discogs_id": "2195793",
-            "shop_id": 5,
+            "shop_id": 1,
+            "name": "Crooked Rain Crooked Rain",
+            "artist": "Pavement",
+            "label": "Matador",
+            "catalogue_number": "OLE 079-0",
+            "country": "US",
+            "year": "2010",
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": "19.99",
+            "image_url": "",
+            "notes": "lorem ipsum",
+            "date_added": "2020-11-20T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 21,
+        "fields": {
+            "discogs_id": "2195793",
+            "shop_id": 1,
+            "name": "Crooked Rain Crooked Rain",
+            "artist": "Pavement",
+            "label": "Matador",
+            "catalogue_number": "OLE 079-0",
+            "country": "US",
+            "year": "2010",
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": "19.99",
+            "image_url": "",
+            "notes": "lorem ipsum",
+            "date_added": "2020-11-20T12:35:37+00:00"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 22,
+        "fields": {
+            "discogs_id": "2195793",
+            "shop_id": 1,
             "name": "Crooked Rain Crooked Rain",
             "artist": "Pavement",
             "label": "Matador",

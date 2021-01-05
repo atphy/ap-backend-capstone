@@ -9,7 +9,9 @@ from discogs_client import models
 class ArtistSearch(ViewSet):
     def list(self, request):
         d = discogs_client.Client('Fullstack/0.1 +@:atphy42@gmail.com', user_token="EMIDOqyOnyXKSDQGfzjhruBlRDBvBVaZnIDcaTOd")
-        results = d.search(request.data["artist"], type='artist')
+        artist = self.request.query_params.get("artist", None)
+        results = d.search(artist, type='artist').page(1)
+        
         
         serializer = ArtistSearchSerializer(
             results, many=True, context={'request': request})
