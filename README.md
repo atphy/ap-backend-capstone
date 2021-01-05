@@ -27,7 +27,7 @@ The idea came from several conversations with the owner of a (now-closed) record
 - [x] Stores are able to create a profile, to be sent to an approval queue
 - [x] Stores are able to search for records on Discogs and, if a match is found, populate that info into an “add record to inventory” form (if no match, this form is blank)
 - [x] Stores are able to edit records and remove them from their inventory
-- [ ] Customers are able to add and remove records in a stack once authed
+- [x] Customers are able to add and remove records in a stack once authed
 - [x] Customers are able to click on a “detail view” to display more information about records
 
 ### Features that are Stretch Goals:
