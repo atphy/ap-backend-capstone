@@ -45,17 +45,17 @@ export const EditRecordForm = (props) => {
         <div className="record-form-container">
         <h1>Enter Record Information</h1>
         <form >
-            <label for="name">Record name: </label>
+            <label htmlFor="name">Record name: </label>
             <input type="text" name="name" ref={name} defaultValue={props.shopRecord.name} />
-            <label for="artist">Artist: </label>
+            <label htmlFor="artist">Artist: </label>
             <input type="text" ref={artist} name="artist" defaultValue={props.shopRecord.artist} />
-            <label for="label">Label: </label>
+            <label htmlFor="label">Label: </label>
             <input type="text" ref={label} name="label" defaultValue={props.shopRecord.label}/>
-            <label for="catalogue_number">Catalogue Number: </label>
+            <label htmlFor="catalogue_number">Catalogue Number: </label>
             <input type="text" ref={catalogue_number} defaultValue={props.shopRecord.catalogue_number} name="catalogue_number" />
-            <label for="year">Release year: </label>
+            <label htmlFor="year">Release year: </label>
             <input type="text" ref={year} name="year" defaultValue={props.shopRecord.year} />
-            <label for="year">Release country: </label>
+            <label htmlFor="year">Release country: </label>
             <input type="text" ref={country} name="country" defaultValue={props.shopRecord.country} />
             <select ref={media_condition} defaultValue={props.shopRecord.media_condition}>
                 <option value="M">Mint</option>
@@ -73,9 +73,9 @@ export const EditRecordForm = (props) => {
                 <option value="F">Fair</option>
                 <option value="P">Poor</option>
             </select>
-            <label for="price">Price: </label>
+            <label htmlFor="price">Price: </label>
             <input type="text" ref={price} defaultValue={props.shopRecord.price} name="price" />
-            <label for="notes">Notes: </label>
+            <label htmlFor="notes">Notes: </label>
             <input ref={notes} type="textarea" defaultValue={props.shopRecord.notes} rows="10" name="notes" />
             <input type="submit" onClick={constructNewRecord}/>
         </form>

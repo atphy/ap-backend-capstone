@@ -11,14 +11,19 @@ export const MasterSelectForm = (props) => {
         <h1>Select record</h1>
         {props.artistMastersList ? 
                 props.artistMastersList.map(master => {
-                    return <h2 
-                    onClick={() => 
+                    return <div onClick={() => 
                         {
-                        props.findMasterVersions(props.searchArtist, master.title)
-                        props.setSearchMaster(master.title)    
-                        props.componentChangeHandler("versionSelect") 
+                        if(master.type === "master") {
+                        props.findMasterVersions(master.id)   
+                        props.componentChangeHandler("versionSelect")
+                        } else if (master.type === "release") {
+                        props.setInfoForForm(master)    
+                        props.componentChangeHandler("recordForm")
+                        }
                         }}
-                    key={master.id}>{master.title}</h2>
+                    key={master.id}>
+                    <h2>{master.title}</h2>
+                    </div>
                 })
             : 
             null}

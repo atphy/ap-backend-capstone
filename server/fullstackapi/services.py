@@ -1,4 +1,4 @@
-import fullstackapi.discogs_auth
+#import fullstackapi.discogs_auth
 import requests
 
 # Defines calls a Shop will use in adding records to their Inventory

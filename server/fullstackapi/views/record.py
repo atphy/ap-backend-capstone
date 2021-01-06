@@ -57,7 +57,7 @@ class Records(ViewSet):
         record.media_condition = request.data["media_condition"]
         record.sleeve_condition = request.data["sleeve_condition"]
         record.price = request.data["price"]
-        record.image_url = "media/placeholder 150.png"
+        record.image_url = request.data["image_url"]
         record.notes = request.data["notes"]
 
         try:
@@ -89,7 +89,7 @@ class Records(ViewSet):
         record.media_condition = request.data["media_condition"]
         record.sleeve_condition = request.data["sleeve_condition"]
         record.price = request.data["price"]
-        record.image_url = "media/placeholder 150.png"
+        record.image_url = request.data["image_url"]
         record.notes = request.data["notes"]
         
         if record.shop_id == shop:
@@ -130,7 +130,7 @@ class Records(ViewSet):
 class RecordListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Record
-        fields = ('id', 'shop_id', 'name', 'artist', 'label', 'catalogue_number', 'country', 'year', 'media_condition', 'sleeve_condition', 'price', 'image_url', 'notes', 'date_added')
+        fields = ('id', 'discogs_id', 'shop_id', 'name', 'artist', 'label', 'catalogue_number', 'country', 'year', 'media_condition', 'sleeve_condition', 'price', 'image_url', 'notes', 'date_added')
 
 """Serializer for single record detail view"""
 class RecordDetailSerializer(serializers.ModelSerializer):

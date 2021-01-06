@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useContext} from "react";
 import { Route } from "react-router-dom"
 import { ApproveShop } from './admin/ApproveShop'
@@ -12,7 +13,6 @@ import { StackProvider } from './Customers/Stacks/StackProvider'
 import { RecordDetail } from './Records/RecordDetail'
 import { SingleShop } from './Shops/SingleShop'
 import { DiscogsProvider } from './discogs/DiscogsProvider'
-import { Button } from 'reactstrap';
 import { Link } from "react-router-dom"
 
 export const ApplicationViews = (props) => {
@@ -31,7 +31,7 @@ export const ApplicationViews = (props) => {
             <div>
             <Link onClick={() => {
                 localStorage.clear()}}
-                className="customer-top-info" to={{pathname:`/`}}>Log out</Link>
+                className="customer-top-info top-nav-button" to={{pathname:`/`}}>Log out</Link>
             <DiscogsProvider>
             <StackProvider>
             <RecordProvider>

@@ -1,4 +1,3 @@
-import discogsKeys from './discogsKeys.json'
 import React, { useState } from "react"
 
 export const DiscogsContext = React.createContext()
@@ -33,8 +32,8 @@ export const DiscogsProvider = (props) => {
                 .then(setMastersSearchList)
     }
 
-    const findMasterVersions = (artist, master) => {
-        return fetch(`http://localhost:8000/search_discogs_versions?artist=${artist}&master=${master}`, {
+    const findMasterVersions = (master) => {
+        return fetch(`http://localhost:8000/search_discogs_versions?master=${master}`, {
             method: "GET",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("fullstack_token")}`,

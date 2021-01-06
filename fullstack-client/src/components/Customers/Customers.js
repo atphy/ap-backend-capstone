@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useContext, useState, useRef} from "react";
 import { Loading } from "../Loading/Loading";
 import { CustomerContext } from './CustomerProvider'
@@ -8,7 +9,7 @@ import "./Customers.css"
 export const Customers = (props) => {
 
     const { getAuthedCustomer, singleCustomer } = useContext(CustomerContext)
-    const [searchZip, setSearchZip] = useState(null)
+    const [searchZip, setSearchZip] = useState(37216)
     const [searchRadius, setSearchRadius] = useState(50)
     const [useDefaultZip, setUseDefaultZip] = useState(true)
 
@@ -47,11 +48,11 @@ export const Customers = (props) => {
 
     const setTopLinkForUser = () => {
         if(props.currentUserProfile === 3) {
-            return <Link to={{pathname:`/my_stack`}}>My Stack</Link>
+            return <Link className="customer-top-info top-nav-button" to={{pathname:`/my_stack`}}>My Stack</Link>
         } else if (props.currentUserProfile === 2) {
-            return <Link className="customer-top-info" to={{pathname:`/myshop`}}>My Shop</Link>
+            return <Link className="customer-top-info top-nav-button" to={{pathname:`/myshop`}}>My Shop</Link>
         } else if (props.currentUserProfile === 1) {
-            return <Link className="customer-top-info" to={{pathname:`/admin`}}>Admin Panel</Link>
+            return <Link className="customer-top-info top-nav-button" to={{pathname:`/admin`}}>Admin Panel</Link>
         }
     }
 
@@ -75,7 +76,7 @@ export const Customers = (props) => {
             </form>
             }
             </div>
-            <CustomerShopList key="customer_shop_list" currentUserProfile={props.currentUserProfile} searchRadius={searchRadius} singleCustomer={singleCustomer} />
+            <CustomerShopList searchZip={searchZip} key="customer_shop_list" currentUserProfile={props.currentUserProfile} searchRadius={searchRadius} singleCustomer={singleCustomer} />
             </div>
         )
         }

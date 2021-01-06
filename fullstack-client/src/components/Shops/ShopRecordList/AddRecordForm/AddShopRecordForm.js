@@ -9,11 +9,10 @@ import "./AddShopRecordForm.css"
 
 export const AddRecordForm = (props) => {
     const [selectedComponent, setSelectedComponent] = useState(props.modalComponent)
-    const [searchArtist, setSearchArtist] = useState(null)
-    const [searchMaster, setSearchMaster] = useState(null)
 
     const {artistMastersList, findArtistMasters, masterVersionsList, findMasterVersions} = useContext(DiscogsContext)
-    const [infoForForm, setInfoForForm] = useState(null)
+    const [infoForForm, setInfoForForm] = useState(props.clearArtist)
+    const [searchArtist, setSearchArtist] = useState(null)
 
     const componentChangeHandler = (newComponent) => {
         setSelectedComponent(newComponent)
@@ -34,7 +33,7 @@ export const AddRecordForm = (props) => {
     } else if (selectedComponent === "recordForm") {
     return (
             <>
-            <RecordForm searchMaster={searchMaster} searchArtist={searchArtist} infoForForm={infoForForm} />
+            <RecordForm setSearchArtist={setSearchArtist} setInfoForForm={setInfoForForm} searchArtist={searchArtist} infoForForm={infoForForm} />
             </>
             )
     } else if (selectedComponent === "editRecord") {
@@ -52,7 +51,7 @@ export const AddRecordForm = (props) => {
     } else if (selectedComponent === "masterSelect") {
         return (
             <>
-            <MasterSelectForm setSearchMaster={setSearchMaster} searchArtist={searchArtist} findMasterVersions={findMasterVersions} artistMastersList={artistMastersList} componentChangeHandler={componentChangeHandler} />
+            <MasterSelectForm setInfoForForm={setInfoForForm} findMasterVersions={findMasterVersions} artistMastersList={artistMastersList} componentChangeHandler={componentChangeHandler} />
             </>
             )
     } else if (selectedComponent === "versionSelect") {
