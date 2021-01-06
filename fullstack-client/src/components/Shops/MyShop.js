@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useContext, useRef} from "react";
 import { Redirect } from "react-router-dom"
-import { Link } from "react-router-dom"
 import { Loading } from "../Loading/Loading";
 import { ShopContext } from './ShopProvider'
 import { ShopRecordList } from "./ShopRecordList/ShopRecordList";
@@ -9,7 +8,7 @@ import { ShopVerification } from './ShopVerification';
 import { AddRecordForm } from './ShopRecordList/AddRecordForm/AddShopRecordForm'
 import "./MyShop.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStepBackward, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import { faPlusCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import { Button } from 'reactstrap';
 
 export const MyShop = (props) => {
@@ -34,12 +33,11 @@ export const MyShop = (props) => {
         return (
             <div>{singleShop.verified ? 
             <div>
-            <Link className="customer-top-info top-nav-button" to={{pathname:`/`}}><FontAwesomeIcon icon={faStepBackward} /></Link>
-            <h1>{singleShop.username}</h1>
-            <button onClick={() => {
-                            addRecordDialog.current.showModal()}}>Add Record</button>
+            <h1 className="add-record-title">{singleShop.username}</h1>
+            <button className="customer-top-info top-nav-button add-record-button" onClick={() => {
+                            addRecordDialog.current.showModal()}}><FontAwesomeIcon icon={faPlusCircle} /></button>
             <dialog className="dialog dialog--addRecord" ref={addRecordDialog}>
-            <Button onClick={e => {addRecordDialog.current.close()}}><FontAwesomeIcon icon={faTimesCircle} /></Button>
+            <Button color="danger" onClick={e => {addRecordDialog.current.close()}}><FontAwesomeIcon icon={faTimesCircle} /></Button>
                 <AddRecordForm clearArtist={null} modalComponent={"modalMain"}/>    
             </dialog>
             <ShopRecordList conditionalListClass="record-list" isMyShop={true} getAuthedShop={getAuthedShop} currentUserProfile={props.currentUserProfile} currentShop={singleShop}/>

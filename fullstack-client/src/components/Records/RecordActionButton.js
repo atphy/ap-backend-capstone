@@ -54,11 +54,11 @@ export const RecordActionButton = (props) => {
         } else if (props.currentUserProfile === 2) {
             if(props.isMyShop) {
                 return <> 
-                <button onClick={handleRecordDelete}>X</button>
-                <button onClick={(e) => {
-                        addRecordDialog.current.showModal()}}>Edit</button>
+                <Button color="danger" onClick={handleRecordDelete}><FontAwesomeIcon icon={faTimesCircle} /></Button>
+                <Button color="warning" onClick={(e) => {
+                        addRecordDialog.current.showModal()}}>Edit</Button>
                 <dialog className="dialog dialog--addRecord" ref={addRecordDialog}>
-                <Button onClick={e => {addRecordDialog.current.close()}}><FontAwesomeIcon icon={faTimesCircle} /></Button>
+                <Button color="danger" onClick={e => {addRecordDialog.current.close()}}><FontAwesomeIcon icon={faTimesCircle} /></Button>
                     <AddRecordForm shopRecord={props.shopRecord} modalComponent={"editRecord"}/>    
                 </dialog>
                 </>

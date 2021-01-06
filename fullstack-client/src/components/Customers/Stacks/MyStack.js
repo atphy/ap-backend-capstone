@@ -2,7 +2,6 @@
 import React, { useContext, useEffect } from "react";
 import { StackContext } from './StackProvider'
 import { ShopRecord } from '../../Shops/ShopRecordList/ShopRecord'
-import { Link } from "react-router-dom"
 import { Redirect } from "react-router-dom"
 import { Loading } from '../../Loading/Loading'
 
@@ -24,7 +23,6 @@ if (!props.currentUserProfile) {
         return (
             <>
             <div className="my-stack-container" style={{ margin: "0 0", lineHeight: "1.75rem", }}> 
-            <Link to={{pathname:`/`}}>Back to home</Link>
             <h1>Your Stack</h1>
             <div className="record-list">
             {stackItems.map(stackItem => {

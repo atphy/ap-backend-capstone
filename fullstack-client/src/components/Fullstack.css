@@ -26,7 +26,6 @@ p {
 
 .secondary-container {
     margin: 50px;
-    padding: 20px;
     height: 90vh;
     background-color: #E6E5CF;
     border: solid white 4px;
@@ -35,6 +34,28 @@ p {
     overflow-y: auto;
     overflow-x: hidden;
     box-shadow: -0.2vh 0.2vw 5px 5px;
+}
+
+.nav-container {
+    position: fixed;
+    border: solid black 1px;
+    border-radius: 20px 20px 0px 0px;
+    background-color: #DD9866;
+    max-height: 15px;
+    width: 93%;
+    padding-top: 15px;
+    overflow: hidden;
+    transition: max-height 1s ease;
+}
+
+.nav-container:hover {
+    max-height: 800px;
+    transition: max-height 1s ease;
+}
+
+.customers-container {
+    padding: 20px;
+    border-radius: 20px 20px 0px 0px;
 }
 
 .top-nav-button {
@@ -52,6 +73,7 @@ p {
     justify-items: center;
     background-color: rgba(0,0,0,0.1);
     border-radius: 20px;
+    text-align: center;
 }
 
 ::-webkit-scrollbar {
