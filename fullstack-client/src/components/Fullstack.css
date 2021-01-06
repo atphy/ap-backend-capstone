@@ -45,6 +45,15 @@ p {
     font-size: 25px;
 }
 
+.record-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr [col-start]);
+    row-gap: 4vh;
+    justify-items: center;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 20px;
+}
+
 ::-webkit-scrollbar {
     width: 8px;
 }
