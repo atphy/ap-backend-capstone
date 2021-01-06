@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect } from "react";
 import { StackContext } from './StackProvider'
 import { ShopRecord } from '../../Shops/ShopRecordList/ShopRecord'

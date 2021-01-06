@@ -2,7 +2,7 @@ from django.conf.urls import include
 from django.urls import path
 from rest_framework import routers
 from fullstackapi.views import register_user, login_user
-from fullstackapi.views import Shops, Records, Stacks, Profiles, Customers, Inventory, ArtistSearch, MasterSearch, MasterVersionSearch, ReleaseInfoSearch
+from fullstackapi.views import Shops, Records, Stacks, Profiles, Customers, Inventory, ArtistSearch, MasterSearch, MasterVersionSearch, ReleaseInfoSearch, TestMasterVersionSearch
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'shops', Shops, 'shop')
@@ -15,6 +15,7 @@ router.register(r'search_discogs_artist', ArtistSearch, 'search_discogs_artist')
 router.register(r'search_discogs_masters', MasterSearch, 'search_discogs_masters')
 router.register(r'search_discogs_versions', MasterVersionSearch, 'search_discogs_versions')
 router.register(r'retrieve_discogs_release', ReleaseInfoSearch, 'retrieve_discogs_release')
+router.register(r'test_discogs_versions', TestMasterVersionSearch, 'test_discogs_versions')
 
 
 urlpatterns = [

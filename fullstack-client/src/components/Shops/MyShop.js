@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useContext, useRef} from "react";
 import { Redirect } from "react-router-dom"
 import { Link } from "react-router-dom"
@@ -33,13 +34,13 @@ export const MyShop = (props) => {
         return (
             <div>{singleShop.verified ? 
             <div>
-            <Link to={{pathname:`/`}}><FontAwesomeIcon icon={faStepBackward} /></Link>
+            <Link className="customer-top-info top-nav-button" to={{pathname:`/`}}><FontAwesomeIcon icon={faStepBackward} /></Link>
             <h1>{singleShop.username}</h1>
             <button onClick={() => {
                             addRecordDialog.current.showModal()}}>Add Record</button>
             <dialog className="dialog dialog--addRecord" ref={addRecordDialog}>
             <Button onClick={e => {addRecordDialog.current.close()}}><FontAwesomeIcon icon={faTimesCircle} /></Button>
-                <AddRecordForm modalComponent={"modalMain"}/>    
+                <AddRecordForm clearArtist={null} modalComponent={"modalMain"}/>    
             </dialog>
             <ShopRecordList isMyShop={true} getAuthedShop={getAuthedShop} currentUserProfile={props.currentUserProfile} currentShop={singleShop}/>
             </div>

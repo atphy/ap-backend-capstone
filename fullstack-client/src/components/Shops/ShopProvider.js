@@ -8,8 +8,8 @@ export const ShopProvider = (props) => {
     const [singleShop, setSingleShop] = useState({})
 
 
-    const getShops = () => {
-        return fetch("http://localhost:8000/shops", {
+    const getShops = (zipCode) => {
+        return fetch(`http://localhost:8000/shops?zip=${zipCode}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("fullstack_token")}`,
                 "Content-Type": "application/json"

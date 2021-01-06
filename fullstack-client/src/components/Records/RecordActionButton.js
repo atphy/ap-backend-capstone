@@ -39,11 +39,11 @@ export const RecordActionButton = (props) => {
     const isRecordInStack = () => {
         if(props.inStack) {
             return (
-                <button onClick={handleStackDelete}>Remove from stack</button> 
+                <Button color="warning" onClick={handleStackDelete}>Remove from stack</Button> 
             )
         } else {
             return (
-                <button onClick={handleStackAdd}>Add to stack</button> 
+                <Button color="success" onClick={handleStackAdd}>Add to stack</Button> 
             )
         }
     }

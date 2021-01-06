@@ -17,6 +17,8 @@ class Shops(ViewSet):
             Response -- JSON serialized list of shops
         """
         shops = Shop.objects.all()
+        for shop in shops:
+            shop.search_distance(self.request.query_params.get("zip"))
 
         serializer = ShopSerializer(
             shops, many=True, context={'request': request})
@@ -33,7 +35,7 @@ class Shops(ViewSet):
 
             records = RecordSerializer(
                 records, many=True, context={'request': request})
-            shop = ShopSerializer(
+            shop = SingleShopSerializer(
                 shop, many=False, context={'request': request})
 
             shop_records = shop.data
@@ -67,7 +69,7 @@ class Shops(ViewSet):
 
         records = RecordDetailSerializer(
             records, many=True, context={'request': request})
-        authed_shop = ShopSerializer(
+        authed_shop = SingleShopSerializer(
             authed_shop, many=False, context={'request': request})
 
         shop_records = authed_shop.data
@@ -87,12 +89,12 @@ class RecordDetailSerializer(serializers.ModelSerializer):
         model = Record
         fields = ('id', 'discogs_id', 'shop_id', 'name', 'artist', 'label', 'catalogue_number', 'country', 'year', 'media_condition', 'sleeve_condition', 'price', 'image_url', 'notes')
 
-class ShopRecordsSerializer(serializers.ModelSerializer):
+class SingleShopSerializer(serializers.ModelSerializer):
 
     records = RecordSerializer(many=True)
     class Meta:
         model = Shop
-        fields = ('id', 'profile', 'verified', 'username', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zip_code', 'contact_phone', 'contact_email', 'location', 'customer_distance')
+        fields = ('id', 'profile', 'verified', 'username', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zip_code', 'contact_phone', 'contact_email', 'location', 'records')
 class ShopSerializer(serializers.ModelSerializer):
     records = RecordSerializer(many=True)
     class Meta:

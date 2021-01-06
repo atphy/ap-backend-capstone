@@ -6,7 +6,6 @@ import { Register } from "./auth/Register"
 import "./Fullstack.css"
 import { UserProvider } from "./users/UserProvider"
 import { ShopProvider } from './Shops/ShopProvider'
-import { useHistory } from "react-router-dom";
 
 export const Fullstack = () => (
     <div className="main-container">

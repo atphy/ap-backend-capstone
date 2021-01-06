@@ -14,7 +14,7 @@ export const ApproveShop = (props) => {
     const { getShops, shops, verifyShop } = useContext(ShopContext)
 
     useEffect(()=>{
-        getShops()
+        getShops(37216)
     }, [])
 
     const handleVerifyShop = (e) => {

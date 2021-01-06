@@ -37,6 +37,14 @@ p {
     box-shadow: -0.2vh 0.2vw 5px 5px;
 }
 
+.top-nav-button {
+    border: none;
+    padding: 0;
+    color: #5C6E91;
+    font-family: 'Lora', serif;
+    font-size: 25px;
+}
+
 ::-webkit-scrollbar {
     width: 8px;
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useContext} from "react";
 import { Link } from "react-router-dom"
 import { RecordContext } from './RecordProvider'
@@ -12,7 +13,7 @@ export const RecordDetail = (props) => {
     }, [])
 
     return <>
-    <Link to={{pathname:`/`}}>Back to home</Link>
+    <Link className="customer-top-info top-nav-button" to={{pathname:`/`}}>Back to home</Link>
     <img alt={`Full size of ${singleRecord.name} by ${singleRecord.artist}`} src={singleRecord.image_url} />
     <h1>{singleRecord.name}</h1>
     <h2>{singleRecord.artist}</h2>

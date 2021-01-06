@@ -10,7 +10,6 @@ export const DiscogsArtistSearch = (props) => {
     const handleArtistSearch = (e) => {
         e.preventDefault();
         getArtistSearch(artistName.current.value)
-        props.setSearchArtist(artistName.current.value)
     }
 
     useEffect(() => {
@@ -21,16 +20,20 @@ export const DiscogsArtistSearch = (props) => {
         <div className="record-form-container">
         <h1>Search for artist by name</h1>
         <form onSubmit={handleArtistSearch}>
-            <input ref={artistName} name="artistName" placeholder="Pavement" type="text"></input>
+            <input ref={artistName} name="artistName" placeholder="Artist Name" type="text"></input>
             <input type="submit"></input>
         </form>
         {artistList ? 
                 artistList.map(artist => {
-                    return <h2 onClick={() => 
+                    return <div onClick={() => 
                         {
                         props.findArtistMasters(artist.id)    
-                        props.componentChangeHandler("masterSelect") 
-                        }} key={artist.id}>{artist.name}</h2>
+                        props.componentChangeHandler("masterSelect")
+                        props.setSearchArtist(artist.name) 
+                        }} key={artist.id}>
+                        <img alt={`Thumbnail of ${artist.name}`} src={artist.thumb} />
+                        <h2>{artist.name}</h2>
+                        </div>
                 })
             : 
             null}
