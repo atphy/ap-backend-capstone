@@ -2,6 +2,7 @@
 import React, {useEffect, useContext} from "react";
 import { Link } from "react-router-dom"
 import { RecordContext } from './RecordProvider'
+import './RecordDetail.css'
 
 export const RecordDetail = (props) => {
 
@@ -12,9 +13,8 @@ export const RecordDetail = (props) => {
         getSingleRecord(recordId)
     }, [])
 
-    return <>
-    <Link className="customer-top-info top-nav-button" to={{pathname:`/`}}>Back to home</Link>
-    <img alt={`Full size of ${singleRecord.name} by ${singleRecord.artist}`} src={singleRecord.image_url} />
+    return <div className="record-detail-container">
+    <img alt={`Thumbnail of ${singleRecord.name} by ${singleRecord.artist}`} src={singleRecord.image_url} />
     <h1>{singleRecord.name}</h1>
     <h2>{singleRecord.artist}</h2>
     <h2>Edition info:</h2>
@@ -27,5 +27,5 @@ export const RecordDetail = (props) => {
     <h3>{singleRecord.notes}</h3>
     <h2>${singleRecord.price}</h2>
     <Link to={{pathname:`/shops/${singleRecord.shop_id}`}}>Back to shop page</Link>
-    </>;
+    </div>;
 };

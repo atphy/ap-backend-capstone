@@ -33,13 +33,13 @@ export const AddRecordForm = (props) => {
     } else if (selectedComponent === "recordForm") {
     return (
             <>
-            <RecordForm setSearchArtist={setSearchArtist} setInfoForForm={setInfoForForm} searchArtist={searchArtist} infoForForm={infoForForm} />
+            <RecordForm closeDialog={props.closeDialog} setSearchArtist={setSearchArtist} setInfoForForm={setInfoForForm} searchArtist={searchArtist} infoForForm={infoForForm} />
             </>
             )
     } else if (selectedComponent === "editRecord") {
         return (
                 <>
-                <EditRecordForm shopRecord={props.shopRecord} />
+                <EditRecordForm closeDialog={props.closeDialog} shopRecord={props.shopRecord} />
                 </>
                 )
         } else if (selectedComponent === "discogsArtistSearch") {

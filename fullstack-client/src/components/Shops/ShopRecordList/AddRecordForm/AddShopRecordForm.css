@@ -5,9 +5,28 @@
     top: 10vh;   
     padding: 20px;
     height: 70vh;
+    width: 98vw;
     border: solid white 4px;
     border-radius: 20px;
     justify-content: center;
     overflow-x: auto;
     box-shadow: -0.2vh 0.2vw 2px 2px;
+}
+
+.record-form-container {
+    text-align: center;    
+}
+
+.artist-search-container {
+    text-align: center;
+}
+
+.artist-result-title {
+    background-color: rgba(0, 0, 0, 0.7) !important ;
+    margin: 0 -20px !important;
+}
+
+.artist-search-results {
+    width: 300px !important;
+    height: 300px !important;
 }

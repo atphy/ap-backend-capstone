@@ -1,39 +1,18 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, {useContext, useEffect } from "react";
-import { ShopContext } from '../../Shops/ShopProvider'
+import React from "react";
 import { ShopRecordList } from '../../Shops/ShopRecordList/ShopRecordList'
 import { useHistory } from "react-router-dom";
 
 export const CustomerShopList = (props) => {
     const history = useHistory();
 
-    const { getShops, shops } = useContext(ShopContext)
-
-    useEffect(() => {
-        getShops(props.searchZip)
-    }, [props.searchZip])
-
-    const filteredShops = shops.filter(s => s.customer_distance < props.searchRadius)
+    const filteredShops = props.shops.filter(s => s.customer_distance < props.searchRadius)
     const sortedShops = filteredShops.sort((a, b) => (a.customer_distance > b.customer_distance) ? 1 : -1)
 
     return (
         <>
             <div className="customer-shop-list-container" style={{ margin: "0 0", lineHeight: "1.75rem", }}> 
-            <div className="customer-top-info">
-            <select className="all-shops-select" onChange={(e) => {
-                        if(e.target.value){
-                            history.push(`/shops/${e.target.value}`)}}
-                        }
-                        >
-            <option value={null}>Or select from all record shops</option>
-            {shops.map(shop => {
-                if (shop.verified === true) {
-                    return <option key={shop.id} value={shop.id}>{shop.username}</option>
-                }
-            })}
-            </select>
-            </div>
             <div className="main-shop-list">
             {sortedShops.map(shop => {
                 if (shop.verified === true) {

@@ -1,0 +1,30 @@
+.nav-main {
+    height: 100%;
+    margin-bottom: 5px;
+}
+
+.customer-top-info {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.zip-input {
+    background-color: rgba(0,0,0,0);
+    border: none;
+    float: left;
+    font-family: 'Lora', serif;
+    font-size: 30px;
+    color: blue;
+    width: 20px;
+}
+
+.list-option-display {
+    color: #5C6E91;
+    margin-left: 20px;
+    width: 50px;
+    float: left;
+}
+
+.list-option-label {
+    float: left;
+}

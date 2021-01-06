@@ -6,15 +6,16 @@ import { Register } from "./auth/Register"
 import "./Fullstack.css"
 import { UserProvider } from "./users/UserProvider"
 import { ShopProvider } from './Shops/ShopProvider'
+import { CustomerProvider } from './Customers/CustomerProvider'
 
 export const Fullstack = () => (
     <div className="main-container">
-        <div className="secondary-container">
         <Route path="/" render={() => {
             if (localStorage.getItem("fullstack_token")) {
 
                 return (
                     <>
+                    <CustomerProvider>
                     <ShopProvider>
                     <UserProvider>
                         <Route render={props =>
@@ -23,6 +24,7 @@ export const Fullstack = () => (
 
                     </UserProvider>
                     </ShopProvider>
+                    </CustomerProvider>
                     </>
                 )
             }
@@ -36,11 +38,11 @@ export const Fullstack = () => (
                 return <Redirect to="/" />
             } else {
                 return (
-                <>
+                <div className="secondary-container">
                 <UserProvider>
                     <Login {...props} />
                 </UserProvider>
-                </>
+                </div>
                 )
             }
         }} />
@@ -51,7 +53,9 @@ export const Fullstack = () => (
                     return <Redirect to="/" />
                 }
                 else {
-                    return <Register {...props}/>
+                    return <div className="secondary-container">
+                    <Register {...props}/>
+                    </div>
                 }
             }} />
         </UserProvider>
@@ -63,6 +67,5 @@ export const Fullstack = () => (
                 </>
                 )
         }} />
-        </div>
     </div>
 )
