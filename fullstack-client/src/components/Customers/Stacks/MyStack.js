@@ -26,11 +26,13 @@ if (!props.currentUserProfile) {
             <div className="my-stack-container" style={{ margin: "0 0", lineHeight: "1.75rem", }}> 
             <Link to={{pathname:`/`}}>Back to home</Link>
             <h1>Your Stack</h1>
+            <div className="record-list">
             {stackItems.map(stackItem => {
                     return <div>
                     <ShopRecord stackItems={stackItems} stackId={stackItem.id} key={stackItem.record.id} currentUserProfile={props.currentUserProfile} shopRecord={stackItem.record} />
                     </div>
             })}
+            </div>
             </div>
         </>
     )

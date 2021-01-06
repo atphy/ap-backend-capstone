@@ -5,6 +5,7 @@ import { ShopContext } from './ShopProvider'
 import { ShopRecordList } from './ShopRecordList/ShopRecordList'
 import { Loading } from '../Loading/Loading'
 import { Redirect } from "react-router-dom"
+import "./SingleShop.css"
 
 export const SingleShop = (props) => {
 
@@ -26,6 +27,6 @@ if (!singleShop.verified) {
     return <>
     <Link className="customer-top-info top-nav-button" to={{pathname:`/`}}>Back to home</Link>
     <h1>{singleShop.username}</h1>
-    <ShopRecordList key={singleShop.id} currentUserProfile={props.currentUserProfile} currentShop={singleShop}/>
+    <ShopRecordList conditionalListClass="record-list" key={singleShop.id} currentUserProfile={props.currentUserProfile} currentShop={singleShop}/>
     </>;
 };

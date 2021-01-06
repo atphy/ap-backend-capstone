@@ -42,7 +42,7 @@ export const MyShop = (props) => {
             <Button onClick={e => {addRecordDialog.current.close()}}><FontAwesomeIcon icon={faTimesCircle} /></Button>
                 <AddRecordForm clearArtist={null} modalComponent={"modalMain"}/>    
             </dialog>
-            <ShopRecordList isMyShop={true} getAuthedShop={getAuthedShop} currentUserProfile={props.currentUserProfile} currentShop={singleShop}/>
+            <ShopRecordList conditionalListClass="record-list" isMyShop={true} getAuthedShop={getAuthedShop} currentUserProfile={props.currentUserProfile} currentShop={singleShop}/>
             </div>
             :<ShopVerification currentShop={singleShop}/> }</div>
         )
