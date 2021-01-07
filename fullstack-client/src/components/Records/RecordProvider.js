@@ -5,6 +5,18 @@ export const RecordContext = React.createContext()
 export const RecordProvider = (props) => {
 
     const [singleRecord, setSingleRecord] = useState({})
+    const [allRecords, setAllRecords] = useState([])
+
+    const getAllRecords = () => {
+        return fetch("http://localhost:8000/records", {
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("fullstack_token")}`,
+                "Content-Type": "application/json"
+            }
+        })
+            .then(res => res.json())
+            .then(setAllRecords)
+    }
 
     const getSingleRecord = (recordId) => {
         return fetch(`http://localhost:8000/records/${recordId}`, {
@@ -26,6 +38,7 @@ export const RecordProvider = (props) => {
             },
             body: JSON.stringify(record)
         })
+        .then(getAllRecords)
     }
 
     const updateRecord = (record_id, record) => {
@@ -50,7 +63,7 @@ export const RecordProvider = (props) => {
 
     return (
         <RecordContext.Provider value={{
-            deleteRecord, getSingleRecord, singleRecord, addRecord, updateRecord
+            allRecords, deleteRecord, getSingleRecord, singleRecord, addRecord, updateRecord
         }}>
             {props.children}
         </RecordContext.Provider>

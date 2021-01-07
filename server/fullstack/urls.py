@@ -1,6 +1,8 @@
 from django.conf.urls import include
 from django.urls import path
 from rest_framework import routers
+from django.conf.urls.static import static
+from django.conf import settings
 from fullstackapi.views import register_user, login_user
 from fullstackapi.views import Shops, Records, Stacks, Profiles, Customers, Inventory, ArtistSearch, MasterSearch, MasterVersionSearch, ReleaseInfoSearch, TestMasterVersionSearch
 
@@ -23,4 +25,4 @@ urlpatterns = [
     path('register', register_user),
     path('login', login_user),
     path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
-]
+]+ static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

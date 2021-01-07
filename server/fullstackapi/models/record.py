@@ -16,7 +16,6 @@ class Record(models.Model):
     sleeve_condition = models.CharField(max_length=3)
     price = models.FloatField(
         validators=[MinValueValidator(0.00), MaxValueValidator(27500.00)],)
-    image_url = models.ImageField(upload_to="placeholders", height_field=None,
-        width_field=None, max_length=None, null=True)
+    image_url = models.ImageField(upload_to="album_art", null=True)
     notes = models.CharField(max_length=200)
     date_added = models.DateTimeField(auto_now_add=True)
