@@ -6,6 +6,9 @@ from django.core.exceptions import ValidationError
 from rest_framework import serializers
 from rest_framework import status
 from fullstackapi.models import Record, Profile, Shop
+from django.core import files
+from io import BytesIO
+import requests
 
 class Records(ViewSet):
     """Fullstack records"""
@@ -57,8 +60,17 @@ class Records(ViewSet):
         record.media_condition = request.data["media_condition"]
         record.sleeve_condition = request.data["sleeve_condition"]
         record.price = request.data["price"]
-        record.image_url = request.data["image_url"]
         record.notes = request.data["notes"]
+
+        url = request.data["image_url"]
+        resp = requests.get(url)
+
+        fp = BytesIO()
+        fp.write(resp.content)
+        file_name = url.split("/")[-1]
+        record.image_url.save(file_name, files.File(fp))
+
+        
 
         try:
             record.save()

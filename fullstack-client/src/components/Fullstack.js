@@ -7,6 +7,7 @@ import "./Fullstack.css"
 import { UserProvider } from "./users/UserProvider"
 import { ShopProvider } from './Shops/ShopProvider'
 import { CustomerProvider } from './Customers/CustomerProvider'
+import { RecordProvider } from './Records/RecordProvider'
 
 export const Fullstack = () => (
     <div className="main-container">
@@ -15,6 +16,7 @@ export const Fullstack = () => (
 
                 return (
                     <>
+                    <RecordProvider>
                     <CustomerProvider>
                     <ShopProvider>
                     <UserProvider>
@@ -25,6 +27,7 @@ export const Fullstack = () => (
                     </UserProvider>
                     </ShopProvider>
                     </CustomerProvider>
+                    </RecordProvider>
                     </>
                 )
             }

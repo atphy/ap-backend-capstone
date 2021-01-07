@@ -6,7 +6,7 @@ import { MyShop } from './Shops/MyShop'
 import { Customers } from './Customers/Customers'
 import { UserContext } from './users/UserProvider'
 import { ShopProvider, ShopContext } from './Shops/ShopProvider'
-import { RecordProvider } from './Records/RecordProvider'
+import { RecordProvider, RecordContext } from './Records/RecordProvider'
 import { CustomerProvider, CustomerContext } from './Customers/CustomerProvider'
 import { MyStack } from './Customers/Stacks/MyStack'
 import { StackProvider } from './Customers/Stacks/StackProvider'
@@ -18,6 +18,7 @@ import { Nav } from './Nav/Nav'
 export const ApplicationViews = (props) => {
 
     const { getCurrentUser, currentUser } = useContext(UserContext)
+    const { allRecords } = useContext(RecordContext)
 
     useEffect(()=>{
         getCurrentUser()
@@ -46,7 +47,7 @@ export const ApplicationViews = (props) => {
 
     useEffect(() => {
         getShops(searchZip)
-    }, [searchZip])
+    }, [searchZip, allRecords])
     
     return (
         <>
