@@ -423,20 +423,60 @@
         "model": "fullstackapi.record",
         "pk": 22,
         "fields": {
-            "discogs_id": 780895,
-            "shop_id": 3,
-            "name": "Scott 4",
-            "artist": "Scott Walker",
-            "label": "Philips",
-            "catalogue_number": "SBL 7913, SBL.7913, 844 248 BY",
-            "country": "UK",
-            "year": 1969,
-            "media_condition": "NM",
-            "sleeve_condition": "NM",
+            "discogs_id": 3671359,
+            "shop_id": 1,
+            "name": "Dopesmoker",
+            "artist": "Sleep",
+            "label": "Southern Lord",
+            "catalogue_number": "LORD158",
+            "country": "US",
+            "year": 2012,
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": 20.99,
+            "image_url": "album_art/R-3671359-1341299350-4805.jpeg.jpg",
+            "notes": "",
+            "date_added": "2021-01-07T20:23:14.182297Z"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 23,
+        "fields": {
+            "discogs_id": 704571,
+            "shop_id": 2,
+            "name": "Nighthawks At The Diner",
+            "artist": "Tom Waits",
+            "label": "Asylum Records",
+            "catalogue_number": "7E-2008",
+            "country": "US",
+            "year": 1975,
+            "media_condition": "M",
+            "sleeve_condition": "M",
             "price": 75.99,
-            "image_url": "album_art/R-780895-1415493074-8332.jpeg.jpg",
-            "notes": "Original pressing!",
-            "date_added": "2021-01-07T20:03:26.133342Z"
+            "image_url": "album_art/R-704571-1159913796.jpeg.jpg",
+            "notes": "",
+            "date_added": "2021-01-07T20:42:15.669695Z"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 23,
+        "fields": {
+            "discogs_id": 9901619,
+            "shop_id": 1,
+            "name": "Seen Comin' From A Mighty Eye",
+            "artist": "Skyway Man",
+            "label": "YK Records",
+            "catalogue_number": "YK-003",
+            "country": "US",
+            "year": 2016,
+            "media_condition": "M",
+            "sleeve_condition": "M",
+            "price": 25.99,
+            "image_url": "album_art/R-9901619-1488218533-3930.jpeg.jpg",
+            "notes": "",
+            "date_added": "2021-01-07T20:47:06.110462Z"
         }
     },
     {
@@ -457,6 +497,66 @@
             "image_url": "album_art/R-13817302-1561786127-3402.png.jpg",
             "notes": "",
             "date_added": "2021-01-07T20:01:57.254172Z"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 23,
+        "fields": {
+            "discogs_id": 13817302,
+            "shop_id": 2,
+            "name": "Tonight The Machete Dreams",
+            "artist": "Holy Mountain Top Removers",
+            "label": "Centripetal Force",
+            "catalogue_number": "CF.02, OTH020",
+            "country": "US",
+            "year": 2019,
+            "media_condition": "M",
+            "sleeve_condition": "NM",
+            "price": 19.99,
+            "image_url": "album_art/R-13817302-1561786127-3402.png.jpg",
+            "notes": "",
+            "date_added": "2021-01-07T20:01:57.254172Z"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 23,
+        "fields": {
+            "discogs_id": 780895,
+            "shop_id": 2,
+            "name": "Scott 4",
+            "artist": "Scott Walker",
+            "label": "Philips",
+            "catalogue_number": "SBL 7913, SBL.7913, 844 248 BY",
+            "country": "UK",
+            "year": 1969,
+            "media_condition": "NM",
+            "sleeve_condition": "NM",
+            "price": 75.99,
+            "image_url": "album_art/R-780895-1415493074-8332.jpeg.jpg",
+            "notes": "Original pressing!",
+            "date_added": "2021-01-07T20:03:26.133342Z"
+        }
+    },
+    {
+        "model": "fullstackapi.record",
+        "pk": 23,
+        "fields": {
+            "discogs_id": 906717,
+            "shop_id": 2,
+            "name": "Silver Apples",
+            "artist": "Silver Apples",
+            "label": "Kapp Records",
+            "catalogue_number": "KS-3562",
+            "country": "US",
+            "year": 1968,
+            "media_condition": "VG",
+            "sleeve_condition": "M",
+            "price": 50.99,
+            "image_url": "album_art/R-906717-1584270326-8816.jpeg.jpg",
+            "notes": "Original!",
+            "date_added": "2021-01-07T20:02:49.094280Z"
         }
     }
 ]

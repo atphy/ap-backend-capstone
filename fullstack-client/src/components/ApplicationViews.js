@@ -20,6 +20,8 @@ export const ApplicationViews = (props) => {
     const { getCurrentUser, currentUser } = useContext(UserContext)
     const { allRecords } = useContext(RecordContext)
 
+    const [records] = useState(allRecords)
+
     useEffect(()=>{
         getCurrentUser()
     }, [])
@@ -47,7 +49,7 @@ export const ApplicationViews = (props) => {
 
     useEffect(() => {
         getShops(searchZip)
-    }, [searchZip, allRecords])
+    }, [searchZip]) // Look here for issues w refreshing display
     
     return (
         <>

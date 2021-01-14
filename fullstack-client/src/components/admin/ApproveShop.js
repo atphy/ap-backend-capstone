@@ -15,7 +15,7 @@ export const ApproveShop = (props) => {
 
     useEffect(()=>{
         getShops(37216)
-    }, [])
+    }, [shops])
 
     const handleVerifyShop = (e) => {
         e.preventDefault();
