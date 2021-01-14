@@ -49,7 +49,7 @@ export const ShopProvider = (props) => {
                 "Content-Type": "application/json"
             },
         })
-            .then(getShops)
+            .then(getShops(37216))
     }
 
     return (
